@@ -1,0 +1,44 @@
+.presentation { 
+    background-color: $light-grey; 
+    &__location {
+        background-color: $shadow-grey;
+        @include flex-setup;
+    }
+    &__search {
+        @include flex-setup(column);
+        padding: 2rem;
+        input {
+            @include size(220px, 50px);
+            @include format-input;
+        }
+    }
+    &__howto {
+        @include flex-setup(column, center, left);
+        background-color: #fff;
+        .three-steps {
+            @include flex-setup(row, space-around, center, wrap);
+            .step-card {
+                @include flex-setup(row, flex-start, center);
+                position: relative;
+                @include size(330px, 70px);
+                min-width: 330px;
+                margin: 1rem;
+                border-radius: 15px;
+                background-color: $light-grey;
+                box-shadow: $shadow;
+                .number {                    
+                    color: #fff;
+                    background-color: $color-primary;
+                    @include size(25px, 25px);
+                    border-radius: 25px;
+                    position: absolute;
+                    top: 20px; right: 0px; bottom: 0px; left: -10px;
+                    vertical-align: center;
+                }
+                i {
+                    margin-left: 2rem;
+                }
+            }
+        }
+    }
+}

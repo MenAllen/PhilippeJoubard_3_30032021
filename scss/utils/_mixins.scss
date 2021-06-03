@@ -1,0 +1,38 @@
+@mixin loader-bloc ($color: $color-secondary, $timing: 2s) {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+	border: 5px solid transparent;
+	border-top-color: $color;
+	animation: spin $timing linear 3;
+}
+
+@mixin size ($width, $height: auto) {
+	width: $width;
+	height: $height;
+}
+
+@mixin minsize ($width, $height: auto) {
+	min-width: $width;
+	min-height: $height;
+}
+
+@mixin format-input {
+	margin: 20px 0;
+	color: #fff;
+	font-size: 18px;
+	background: linear-gradient($color-secondary, $color-primary);
+	border: none;
+	border-radius: 50px;
+	&:hover {
+		box-shadow: $shadow;              
+	}
+}
+
+@mixin flex-setup ($direction: row, $justify: center, $align: center, $wrap: nowrap) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+	flex-wrap: $wrap;
+}

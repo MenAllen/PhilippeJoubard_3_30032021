@@ -1,0 +1,29 @@
+.restaurants { 
+    margin-top: 1rem;
+    padding: 2rem 0;
+    background-color: $light-grey; 
+    &__list {
+        background-color: $light-grey; 
+        @include flex-setup(row, space-around, center, wrap);
+        .affiche {
+            box-shadow: $shadow;
+            border-radius: 15px;
+            @include flex-setup(column, space-around, center);
+            margin: 1rem 0;
+            .image {
+                @include size(30vw, auto);
+                @include minsize(335px, 175px);
+                object-fit: cover;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+            }
+            .legend {
+                @include size(100%);
+                @include flex-setup(row, space-between, center);
+                .description {
+                    @include flex-setup(column, left, left);
+                }
+            }
+        }
+    }
+}

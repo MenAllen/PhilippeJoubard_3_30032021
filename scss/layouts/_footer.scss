@@ -1,0 +1,18 @@
+.footer {
+    background-color: rgba(0, 0, 0, 80%);
+    @include flex-setup (column, flex-start, left);
+    padding: 1rem;
+    img {
+        @include size(196px, 34px);
+    }
+    ul {
+        @include flex-setup (row, space-between, center, wrap);
+        @include size (80%, auto);
+        padding: 2rem;
+        color: #fff;
+        li {
+            list-style-type: none;
+            margin: 0.5rem;
+        }
+    }
+}

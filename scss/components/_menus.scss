@@ -1,0 +1,76 @@
+.menu {
+    background: url("../images/lapalettedugout.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    @include flex-setup (normal, column, center, center);
+/*    position: relative;*/
+    &__description {
+        @include flex-setup (normal, column, space-between, center);
+        @include size (65%);  
+        background-color: $light-grey;
+        border-radius: 1rem;
+        position: relative; 
+        top: 100px;
+        .titre {
+            @include flex-setup (normal, row, space-between, center);
+            @include size (70%); 
+            padding: 1rem 0;           
+        }
+        .carte {
+            @include flex-setup (normal, column, center, center);
+            @include size (75%);
+            position: relative;
+            h4 {
+                text-align: left;
+            }
+            .choix {
+                @include flex-setup (normal, row, space-between, center);
+                background-color: #fff;
+                padding: 0 0 0 1rem;
+                border-radius: 0.75rem;
+                margin: 2rem;
+                width: 60%;
+                max-width: 75%;
+                height: 4rem;
+                overflow: hidden;
+                box-shadow: 2px 2px 14px #aaaaaa;
+                .description {
+                    overflow: hidden;
+                    h3, p {
+                        margin: 0;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        text-align: left;
+                        overflow: hidden;
+                    }
+                }  
+                .price {
+                    line-height: 100px;
+                    padding: 0 16px;
+                }   
+                .selectbox {
+                    @include flex-setup (normal, row, center, center);
+                    background-color: $color-tertiary;
+                    width: 60px;
+                    height: 100%;
+                    margin-right: -64px;
+                    i {
+                        background-color: white;
+                        color: $color-tertiary;
+                        border-radius: 100px;
+                        font-size: 1.5em;
+                        transform: rotate(180deg);
+                    }
+                }
+                &:hover .selectbox i {
+                    animation: checkbox-rotate 0.5s both;
+                }
+                &:hover .selectbox {
+                    margin-right: 0px;
+                    min-width: 4rem;
+                    transition: margin-right 0.5s;
+                }
+            }
+        }
+    }
+}

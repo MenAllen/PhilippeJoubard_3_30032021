@@ -53,12 +53,9 @@ table {
 }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: "Roboto", sans-serif;
-  /*font-size: 16px;*/
-  color: #000;
-  text-align: center;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -67,6 +64,13 @@ h2 {
 
 h3, p {
   font-size: 18px;
+}
+
+p,
+a,
+a:visited {
+  text-decoration: none;
+  color: #000000;
 }
 
 h1,
@@ -108,22 +112,46 @@ span {
   transition: all 0.8s ease-in-out;
 }
 
-.test {
-  display: flex;
-  gap: 2rem;
+li a, li i {
+  color: #fff;
+  text-decoration: none;
 }
 
+a:link {
+  text-decoration: none;
+  color: #000;
+}
+
+@keyframes checkbox-rotate {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
+  column-gap: normal;
+  position: relative;
   width: 100%;
   height: auto;
   padding: 1rem;
   margin-bottom: 0.3rem;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.home {
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  font-size: 30px;
+  text-decoration: none;
+  color: #000;
 }
 
 .footer {
@@ -133,11 +161,14 @@ span {
   justify-content: flex-start;
   align-items: left;
   flex-wrap: nowrap;
+  column-gap: normal;
   padding: 1rem;
+  color: #fff;
 }
-.footer img {
-  width: 196px;
-  height: 34px;
+.footer .logo-text {
+  font-family: Shrikhand;
+  text-align: left;
+  padding-bottom: 1rem;
 }
 .footer ul {
   display: flex;
@@ -145,14 +176,25 @@ span {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  column-gap: normal;
   width: 80%;
   height: auto;
-  padding: 2rem;
-  color: #fff;
+}
+@media (max-width: 768px) {
+  .footer ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .footer ul li {
   list-style-type: none;
   margin: 0.5rem;
+}
+.footer ul li i {
+  padding-right: 1rem;
+}
+.footer ul li a {
+  color: #fff;
 }
 
 .container-loader {
@@ -220,6 +262,8 @@ span {
 }
 .presentation {
   background-color: #fafafa;
+  width: 100%;
+  height: auto;
 }
 .presentation__location {
   background-color: #f2f2f2;
@@ -228,6 +272,7 @@ span {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
+  column-gap: normal;
 }
 .presentation__search {
   display: flex;
@@ -235,6 +280,7 @@ span {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
+  column-gap: normal;
   padding: 2rem;
 }
 .presentation__search input {
@@ -256,6 +302,7 @@ span {
   justify-content: center;
   align-items: left;
   flex-wrap: nowrap;
+  column-gap: normal;
   background-color: #fff;
 }
 .presentation__howto .three-steps {
@@ -264,6 +311,7 @@ span {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  column-gap: normal;
 }
 .presentation__howto .three-steps .step-card {
   display: flex;
@@ -271,27 +319,34 @@ span {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
+  column-gap: normal;
   position: relative;
   width: 330px;
   height: 70px;
   min-width: 330px;
+  min-height: auto;
   margin: 1rem;
   border-radius: 15px;
   background-color: #fafafa;
   box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.15);
 }
 .presentation__howto .three-steps .step-card .number {
-  color: #fff;
-  background-color: #9356DC;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  column-gap: normal;
   width: 25px;
   height: 25px;
-  border-radius: 25px;
+  color: #fff;
+  background-color: #9356DC;
+  border-radius: 50%;
   position: absolute;
-  top: 20px;
+  top: 25px;
   right: 0px;
   bottom: 0px;
   left: -10px;
-  vertical-align: center;
 }
 .presentation__howto .three-steps .step-card i {
   margin-left: 2rem;
@@ -309,6 +364,22 @@ span {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  column-gap: normal;
+}
+@media (max-width: 768px) {
+  .restaurants__list {
+    flex-direction: column;
+  }
+}
+@media (min-width: 1020px) {
+  .restaurants__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 10vw;
+  }
 }
 .restaurants__list .affiche {
   box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.15);
@@ -318,6 +389,7 @@ span {
   justify-content: space-around;
   align-items: center;
   flex-wrap: nowrap;
+  column-gap: normal;
   margin: 1rem 0;
 }
 .restaurants__list .affiche .image {
@@ -325,6 +397,7 @@ span {
   height: auto;
   min-width: 335px;
   min-height: 175px;
+  /*@include minsize(270px, 140px);*/
   object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -337,6 +410,7 @@ span {
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
+  column-gap: normal;
 }
 .restaurants__list .affiche .legend .description {
   display: flex;
@@ -344,6 +418,117 @@ span {
   justify-content: left;
   align-items: left;
   flex-wrap: nowrap;
+  column-gap: normal;
+}
+
+.menu {
+  background: url("../images/lapalettedugout.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  column-gap: normal;
+  /*    position: relative;*/
+}
+.menu__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  column-gap: normal;
+  width: 65%;
+  height: auto;
+  background-color: #fafafa;
+  border-radius: 1rem;
+  position: relative;
+  top: 100px;
+}
+.menu__description .titre {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  column-gap: normal;
+  width: 70%;
+  height: auto;
+  padding: 1rem 0;
+}
+.menu__description .carte {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  column-gap: normal;
+  width: 75%;
+  height: auto;
+  position: relative;
+}
+.menu__description .carte h4 {
+  text-align: left;
+}
+.menu__description .carte .choix {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  column-gap: normal;
+  background-color: #fff;
+  padding: 0 0 0 1rem;
+  border-radius: 0.75rem;
+  margin: 2rem;
+  width: 60%;
+  max-width: 75%;
+  height: 4rem;
+  overflow: hidden;
+  box-shadow: 2px 2px 14px #aaaaaa;
+}
+.menu__description .carte .choix .description {
+  overflow: hidden;
+}
+.menu__description .carte .choix .description h3, .menu__description .carte .choix .description p {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+  overflow: hidden;
+}
+.menu__description .carte .choix .price {
+  line-height: 100px;
+  padding: 0 16px;
+}
+.menu__description .carte .choix .selectbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  column-gap: normal;
+  background-color: #99E2d0;
+  width: 60px;
+  height: 100%;
+  margin-right: -64px;
+}
+.menu__description .carte .choix .selectbox i {
+  background-color: white;
+  color: #99E2d0;
+  border-radius: 100px;
+  font-size: 1.5em;
+  transform: rotate(180deg);
+}
+.menu__description .carte .choix:hover .selectbox i {
+  animation: checkbox-rotate 0.5s both;
+}
+.menu__description .carte .choix:hover .selectbox {
+  margin-right: 0px;
+  min-width: 4rem;
+  transition: margin-right 0.5s;
 }
 
 /*# sourceMappingURL=style.css.map */

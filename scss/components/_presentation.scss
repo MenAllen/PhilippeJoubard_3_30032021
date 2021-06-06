@@ -1,11 +1,12 @@
 .presentation { 
-    background-color: $light-grey; 
+    background-color: $light-grey;
+    @include size (100%);
     &__location {
         background-color: $shadow-grey;
         @include flex-setup;
     }
     &__search {
-        @include flex-setup(column);
+        @include flex-setup(normal, column);
         padding: 2rem;
         input {
             @include size(220px, 50px);
@@ -13,27 +14,27 @@
         }
     }
     &__howto {
-        @include flex-setup(column, center, left);
+        @include flex-setup(normal, column, center, left);
         background-color: #fff;
         .three-steps {
-            @include flex-setup(row, space-around, center, wrap);
+            @include flex-setup(normal, row, space-around, center, wrap);
             .step-card {
-                @include flex-setup(row, flex-start, center);
+                @include flex-setup(normal, row, flex-start, center);
                 position: relative;
                 @include size(330px, 70px);
-                min-width: 330px;
+                @include minsize(330px);
                 margin: 1rem;
                 border-radius: 15px;
                 background-color: $light-grey;
                 box-shadow: $shadow;
-                .number {                    
+                .number {  
+                    @include flex-setup(normal, row, center, center); 
+                    @include size(25px, 25px);                
                     color: #fff;
-                    background-color: $color-primary;
-                    @include size(25px, 25px);
-                    border-radius: 25px;
+                    background-color: $color-primary;                  
+                    border-radius: 50%;
                     position: absolute;
-                    top: 20px; right: 0px; bottom: 0px; left: -10px;
-                    vertical-align: center;
+                    top: 25px; right: 0px; bottom: 0px; left: -10px;
                 }
                 i {
                     margin-left: 2rem;

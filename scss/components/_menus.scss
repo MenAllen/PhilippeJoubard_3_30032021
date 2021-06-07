@@ -1,76 +1,114 @@
 .menu {
-    background: url("../images/lapalettedugout.jpg") no-repeat center center fixed;
-    background-size: cover;
-    height: 100%;
     @include flex-setup (normal, column, center, center);
-/*    position: relative;*/
+    &__picture {
+        width: 100%;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            max-height: 15rem;
+        }
+    }
     &__description {
         @include flex-setup (normal, column, space-between, center);
-        @include size (65%);  
-        background-color: $light-grey;
-        border-radius: 1rem;
-        position: relative; 
-        top: 100px;
-        .titre {
+        @include size (100%);  
+        background-color: $light-grey;  
+
+        .title {
             @include flex-setup (normal, row, space-between, center);
-            @include size (70%); 
-            padding: 1rem 0;           
-        }
-        .carte {
-            @include flex-setup (normal, column, center, center);
-            @include size (75%);
+            @include size (95%);
+            background-color: $light-grey;     
+            padding: 2rem;
+            margin-top: -2rem;
+            border-top-left-radius: 3rem;
+            border-top-right-radius: 3rem;
             position: relative;
-            h4 {
-                text-align: left;
-            }
-            .choix {
-                @include flex-setup (normal, row, space-between, center);
-                background-color: #fff;
-                padding: 0 0 0 1rem;
-                border-radius: 0.75rem;
-                margin: 2rem;
-                width: 60%;
-                max-width: 75%;
-                height: 4rem;
-                overflow: hidden;
-                box-shadow: 2px 2px 14px #aaaaaa;
-                .description {
+            z-index: 1;   
+            h2 {
+                font-family: 'Shrikhand', cursive;
+            }        
+        }
+
+        .meal {
+            @include flex-setup (normal, row, space-around, center, wrap); 
+            @include size(95%);           
+
+            .plate {
+                @include flex-setup (normal, column, center, center);
+ /*               @include size (100%);*/
+            /*    @include minsize (400px);*/
+                    h4 {
+                        padding-left: 1rem;
+                        align-self: start;
+                        font-weight: normal;
+                        &::after {
+                            content: '';
+                            background: $color-tertiary;
+                            display: block;
+                            width: 2.5rem;
+                            height: 0.2rem;
+                            background: $color-tertiary;
+                        }
+                    }
+                .plate-proposal {
+                    @include flex-setup (normal, row, space-between, center);
+                    @include size (25vw);
+                    @include minsize (350px);
+                    background-color: #fff;
+                    padding: 0;
+                    border-radius: 0.75rem;
+                    margin: 1.5rem 0.5rem;
+                    height: 4.4rem;
                     overflow: hidden;
-                    h3, p {
-                        margin: 0;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        text-align: left;
+                    box-shadow: 2px 2px 14px #aaaaaa;
+                    .description {
                         overflow: hidden;
+                        h3, p {
+                            margin: 0.5rem;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            text-align: left;
+                            overflow: hidden;
+                        }
+                    }  
+                    .price {
+                        line-height: 100px;
+                        padding:  0 0.75rem 0 0;;
+                        margin-left: auto;
+                        align-self: start;
+                        font-weight: bold;
+                    }   
+                    .selectbox {
+                        @include flex-setup (normal, row, center, center);
+                        background-color: $color-tertiary;
+                        width: 60px;
+                        height: 100%;
+                        margin-right: -64px;
+                        i {
+                            background-color: white;
+                            color: $color-tertiary;
+                            border-radius: 100px;
+                            font-size: 1.5em;
+                            transform: rotate(180deg);
+                        }
                     }
-                }  
-                .price {
-                    line-height: 100px;
-                    padding: 0 16px;
-                }   
-                .selectbox {
-                    @include flex-setup (normal, row, center, center);
-                    background-color: $color-tertiary;
-                    width: 60px;
-                    height: 100%;
-                    margin-right: -64px;
-                    i {
-                        background-color: white;
-                        color: $color-tertiary;
-                        border-radius: 100px;
-                        font-size: 1.5em;
-                        transform: rotate(180deg);
+                    &:hover .selectbox i {
+                        animation: checkbox-rotate 0.5s both;
                     }
-                }
-                &:hover .selectbox i {
-                    animation: checkbox-rotate 0.5s both;
-                }
-                &:hover .selectbox {
-                    margin-right: 0px;
-                    min-width: 4rem;
-                    transition: margin-right 0.5s;
+                    &:hover .selectbox {
+                        margin-right: 0px;
+                        min-width: 4rem;
+                        transition: margin-right 0.5s;
+                    }
                 }
             }
+        }
+
+        .order {
+            input {
+                @include size(220px, 50px);
+                @include format-input;
+            }    
         }
     }
 }

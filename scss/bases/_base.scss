@@ -8,8 +8,12 @@ h2 {
     font-size: 25px;
 }
 
-h3, p {
+h3 {
     font-size: 18px;
+}
+
+p {
+	font-size: 16px;
 }
 
 p,
@@ -39,6 +43,10 @@ span {
 .p-left {
 	padding: 0 1rem 0.5rem 1rem;
 	text-align: left;
+}
+
+.shrikhand {
+	font-family: "Shrikhand", cursive;
 }
 
 .fa-heart {

@@ -62,8 +62,12 @@ h2 {
   font-size: 25px;
 }
 
-h3, p {
+h3 {
   font-size: 18px;
+}
+
+p {
+  font-size: 16px;
 }
 
 p,
@@ -93,6 +97,10 @@ span {
 .p-left {
   padding: 0 1rem 0.5rem 1rem;
   text-align: left;
+}
+
+.shrikhand {
+  font-family: "Shrikhand", cursive;
 }
 
 .fa-heart {
@@ -162,7 +170,7 @@ a:link {
   align-items: left;
   flex-wrap: nowrap;
   column-gap: normal;
-  padding: 1rem;
+  padding: 2rem;
   color: #fff;
 }
 .footer .logo-text {
@@ -182,8 +190,12 @@ a:link {
 }
 @media (max-width: 768px) {
   .footer ul {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: nowrap;
+    column-gap: normal;
   }
 }
 .footer ul li {
@@ -286,7 +298,7 @@ a:link {
 .presentation__search input {
   width: 220px;
   height: 50px;
-  margin: 20px 0;
+  margin: 2rem 0;
   color: #fff;
   font-size: 18px;
   background: linear-gradient(#ff79da, #9356DC);
@@ -294,7 +306,8 @@ a:link {
   border-radius: 50px;
 }
 .presentation__search input:hover {
-  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
+  opacity: 1.5;
 }
 .presentation__howto {
   display: flex;
@@ -422,16 +435,20 @@ a:link {
 }
 
 .menu {
-  background: url("../images/lapalettedugout.jpg") no-repeat center center fixed;
-  background-size: cover;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
-  /*    position: relative;*/
+}
+.menu__picture {
+  width: 100%;
+}
+.menu__picture img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 15rem;
 }
 .menu__description {
   display: flex;
@@ -440,70 +457,100 @@ a:link {
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
-  width: 65%;
+  width: 100%;
   height: auto;
   background-color: #fafafa;
-  border-radius: 1rem;
-  position: relative;
-  top: 100px;
 }
-.menu__description .titre {
+.menu__description .title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
-  width: 70%;
+  width: 95%;
   height: auto;
-  padding: 1rem 0;
+  background-color: #fafafa;
+  padding: 2rem;
+  margin-top: -2rem;
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  position: relative;
+  z-index: 1;
 }
-.menu__description .carte {
+.menu__description .title h2 {
+  font-family: "Shrikhand", cursive;
+}
+.menu__description .meal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: normal;
+  width: 95%;
+  height: auto;
+}
+.menu__description .meal .plate {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
-  width: 75%;
-  height: auto;
-  position: relative;
+  /*               @include size (100%);*/
+  /*    @include minsize (400px);*/
 }
-.menu__description .carte h4 {
-  text-align: left;
+.menu__description .meal .plate h4 {
+  padding-left: 1rem;
+  align-self: start;
+  font-weight: normal;
 }
-.menu__description .carte .choix {
+.menu__description .meal .plate h4::after {
+  content: "";
+  background: #99E2d0;
+  display: block;
+  width: 2.5rem;
+  height: 0.2rem;
+  background: #99E2d0;
+}
+.menu__description .meal .plate .plate-proposal {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
+  width: 25vw;
+  height: auto;
+  min-width: 350px;
+  min-height: auto;
   background-color: #fff;
-  padding: 0 0 0 1rem;
+  padding: 0;
   border-radius: 0.75rem;
-  margin: 2rem;
-  width: 60%;
-  max-width: 75%;
-  height: 4rem;
+  margin: 1.5rem 0.5rem;
+  height: 4.4rem;
   overflow: hidden;
   box-shadow: 2px 2px 14px #aaaaaa;
 }
-.menu__description .carte .choix .description {
+.menu__description .meal .plate .plate-proposal .description {
   overflow: hidden;
 }
-.menu__description .carte .choix .description h3, .menu__description .carte .choix .description p {
-  margin: 0;
+.menu__description .meal .plate .plate-proposal .description h3, .menu__description .meal .plate .plate-proposal .description p {
+  margin: 0.5rem;
   white-space: nowrap;
   text-overflow: ellipsis;
   text-align: left;
   overflow: hidden;
 }
-.menu__description .carte .choix .price {
+.menu__description .meal .plate .plate-proposal .price {
   line-height: 100px;
-  padding: 0 16px;
+  padding: 0 0.75rem 0 0;
+  margin-left: auto;
+  align-self: start;
+  font-weight: bold;
 }
-.menu__description .carte .choix .selectbox {
+.menu__description .meal .plate .plate-proposal .selectbox {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -515,20 +562,34 @@ a:link {
   height: 100%;
   margin-right: -64px;
 }
-.menu__description .carte .choix .selectbox i {
+.menu__description .meal .plate .plate-proposal .selectbox i {
   background-color: white;
   color: #99E2d0;
   border-radius: 100px;
   font-size: 1.5em;
   transform: rotate(180deg);
 }
-.menu__description .carte .choix:hover .selectbox i {
+.menu__description .meal .plate .plate-proposal:hover .selectbox i {
   animation: checkbox-rotate 0.5s both;
 }
-.menu__description .carte .choix:hover .selectbox {
+.menu__description .meal .plate .plate-proposal:hover .selectbox {
   margin-right: 0px;
   min-width: 4rem;
   transition: margin-right 0.5s;
+}
+.menu__description .order input {
+  width: 220px;
+  height: 50px;
+  margin: 2rem 0;
+  color: #fff;
+  font-size: 18px;
+  background: linear-gradient(#ff79da, #9356DC);
+  border: none;
+  border-radius: 50px;
+}
+.menu__description .order input:hover {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
+  opacity: 1.5;
 }
 
 /*# sourceMappingURL=style.css.map */

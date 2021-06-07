@@ -18,14 +18,15 @@
 }
 
 @mixin format-input {
-	margin: 20px 0;
+	margin: 2rem 0;
 	color: #fff;
 	font-size: 18px;
 	background: linear-gradient($color-secondary, $color-primary);
 	border: none;
 	border-radius: 50px;
 	&:hover {
-		box-shadow: $shadow;              
+		box-shadow: $shadow-input; 
+		opacity: 1.5;             
 	}
 }
 

@@ -1,16 +1,16 @@
 .header {
     @include flex-setup ();
-    position: relative;
     @include size (100%);
+    position: relative;
     padding: 1rem;
     margin-bottom: 0.3rem;
-    box-shadow: 0px 0px 15px rgb(0,0,0, 20%);
+  /*  box-shadow: 0px 0px 15px rgb(0,0,0, 20%);*/
 }
 
 .home {
     position: absolute;
-    top: 20px; left: 15px;
-    font-size: 30px;
+    top: 25px; left: 20px;
+    font-size: 20px;
     text-decoration: none;
-    color: #000;
+    color: $color-backarrow-header;
 }

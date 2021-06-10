@@ -1,3 +1,8 @@
+/* Themes colors */
+/*  Colors used for background */
+/* Miscellaneous colors */
+/* shadows used for buttons and cards */
+/* Border radius */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -59,52 +64,34 @@ body {
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 24px;
 }
 
-h3 {
+h3, p {
   font-size: 18px;
 }
 
-p {
-  font-size: 16px;
-}
-
-p,
-a,
-a:visited {
+p, a, a:visited, a:link {
   text-decoration: none;
-  color: #000000;
+  color: #000;
 }
 
-h1,
-h2,
-h3,
-h4,
-span {
+h1, h2, h3, h4, span {
   font-weight: bold;
 }
 
-.text-center {
-  padding: 1rem;
-}
-
-.h2-left {
-  padding: 1rem;
+.shift-left {
   text-align: left;
-}
-
-.p-left {
-  padding: 0 1rem 0.5rem 1rem;
-  text-align: left;
+  padding: 0 0 0.5rem 0.8rem;
 }
 
 .shrikhand {
   font-family: "Shrikhand", cursive;
+  font-weight: normal;
 }
 
 .fa-heart {
-  font-size: 2em;
+  font-size: 1.8em;
   color: transparent;
   -webkit-text-stroke: 2px black;
   opacity: 0.6;
@@ -125,17 +112,109 @@ li a, li i {
   text-decoration: none;
 }
 
-a:link {
-  text-decoration: none;
-  color: #000;
+.center-text-location {
+  text-align: center;
+  padding: 1rem;
+  line-height: 1;
 }
 
+.center-text-title {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  line-height: 1.2;
+}
+
+.center-text-para {
+  text-align: center;
+  padding: 0.5rem 0;
+  line-height: 1.2;
+}
+
+.center-text-howto {
+  text-align: center;
+  padding: 1rem;
+  line-height: 1;
+}
+
+.menu__description .button, .presentation__search .button {
+  width: 185px;
+  height: 20px;
+  margin: 1.5rem 0;
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  background: linear-gradient(#ff79da, #9356DC);
+  border: none;
+  border-radius: 100px;
+}
+.menu__description .button:hover, .presentation__search .button:hover {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
+  opacity: 1.5;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.restaurants__list .affiche .label-nouveau {
+  width: 4.3rem;
+  height: 0.8rem;
+  background-color: #99E2d0;
+  color: #278870;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0.5rem 0.8rem 0.5rem 0.5rem;
+  text-align: center;
+  border-radius: 2px;
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  bottom: 0px;
+}
+
+.restaurants__list .affiche:hover, .presentation__howto .three-steps .step-card:hover {
+  box-shadow: unset;
+  background-color: #f2f2f2;
+  transition: 0.4s;
+}
+
+/* Loader Animation: rotations during 3s */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Loader Animation : end after 3s */
+@keyframes load {
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+/* Menu Checkbox animation: rotate icon on hover */
 @keyframes checkbox-rotate {
   0% {
     transform: rotate(180deg);
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+/* Menu Display Animation: display hiding */
+@keyframes delayed-display {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }
 .header {
@@ -145,19 +224,19 @@ a:link {
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
-  position: relative;
   width: 100%;
   height: auto;
+  position: relative;
   padding: 1rem;
   margin-bottom: 0.3rem;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  /*  box-shadow: 0px 0px 15px rgb(0,0,0, 20%);*/
 }
 
 .home {
   position: absolute;
-  top: 20px;
-  left: 15px;
-  font-size: 30px;
+  top: 25px;
+  left: 20px;
+  font-size: 20px;
   text-decoration: none;
   color: #000;
 }
@@ -173,11 +252,6 @@ a:link {
   padding: 2rem;
   color: #fff;
 }
-.footer .logo-text {
-  font-family: Shrikhand;
-  text-align: left;
-  padding-bottom: 1rem;
-}
 .footer ul {
   display: flex;
   flex-direction: row;
@@ -187,6 +261,7 @@ a:link {
   column-gap: normal;
   width: 80%;
   height: auto;
+  padding-top: 1rem;
 }
 @media (max-width: 768px) {
   .footer ul {
@@ -210,14 +285,17 @@ a:link {
 }
 
 .container-loader {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
   display: flex;
-  z-index: 100;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  column-gap: normal;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  z-index: 100;
   animation: load 0.01s 3s both;
 }
 
@@ -231,7 +309,7 @@ a:link {
   width: 150px;
   height: 150px;
   vertical-align: middle;
-  border-bottom-color: #99e2d0;
+  border-bottom-color: #99E2d0;
 }
 .loader::after {
   content: "";
@@ -258,33 +336,20 @@ a:link {
   left: 25px;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes load {
-  100% {
-    opacity: 0;
-    z-index: -10;
-  }
-}
 .presentation {
   background-color: #fafafa;
   width: 100%;
   height: auto;
 }
 .presentation__location {
-  background-color: #f2f2f2;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
+  background-color: #f2f2f2;
+  box-shadow: inset 0px 10px 20px -15px rgba(0, 0, 0, 0.55);
 }
 .presentation__search {
   display: flex;
@@ -295,20 +360,6 @@ a:link {
   column-gap: normal;
   padding: 2rem;
 }
-.presentation__search input {
-  width: 220px;
-  height: 50px;
-  margin: 2rem 0;
-  color: #fff;
-  font-size: 18px;
-  background: linear-gradient(#ff79da, #9356DC);
-  border: none;
-  border-radius: 50px;
-}
-.presentation__search input:hover {
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
-  opacity: 1.5;
-}
 .presentation__howto {
   display: flex;
   flex-direction: column;
@@ -317,6 +368,7 @@ a:link {
   flex-wrap: nowrap;
   column-gap: normal;
   background-color: #fff;
+  padding: 2rem 0;
 }
 .presentation__howto .three-steps {
   display: flex;
@@ -325,6 +377,7 @@ a:link {
   align-items: center;
   flex-wrap: wrap;
   column-gap: normal;
+  margin: 0.5rem 0;
 }
 .presentation__howto .three-steps .step-card {
   display: flex;
@@ -333,14 +386,15 @@ a:link {
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
-  position: relative;
   width: 330px;
   height: 70px;
   min-width: 330px;
   min-height: auto;
-  margin: 1rem;
-  border-radius: 15px;
   background-color: #fafafa;
+  cursor: pointer;
+  position: relative;
+  margin: 1rem;
+  border-radius: 23px;
   box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.15);
 }
 .presentation__howto .three-steps .step-card .number {
@@ -350,13 +404,13 @@ a:link {
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
-  width: 25px;
-  height: 25px;
-  color: #fff;
+  width: 2rem;
+  height: 2rem;
   background-color: #9356DC;
+  color: #fff;
   border-radius: 50%;
   position: absolute;
-  top: 25px;
+  top: 1.3rem;
   right: 0px;
   bottom: 0px;
   left: -10px;
@@ -364,14 +418,12 @@ a:link {
 .presentation__howto .three-steps .step-card i {
   margin-left: 2rem;
 }
-
 .restaurants {
   margin-top: 1rem;
-  padding: 2rem 0;
+  padding: 3rem 0;
   background-color: #fafafa;
 }
 .restaurants__list {
-  background-color: #fafafa;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -396,7 +448,7 @@ a:link {
 }
 .restaurants__list .affiche {
   box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.15);
-  border-radius: 15px;
+  border-radius: 23px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -404,26 +456,27 @@ a:link {
   flex-wrap: nowrap;
   column-gap: normal;
   margin: 1rem 0;
+  position: relative;
 }
 .restaurants__list .affiche .image {
   width: 30vw;
   height: auto;
   min-width: 335px;
   min-height: 175px;
-  /*@include minsize(270px, 140px);*/
   object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
 .restaurants__list .affiche .legend {
-  width: 100%;
-  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
+  width: 100%;
+  height: auto;
+  padding: 0.5rem 0;
 }
 .restaurants__list .affiche .legend .description {
   display: flex;
@@ -433,7 +486,6 @@ a:link {
   flex-wrap: nowrap;
   column-gap: normal;
 }
-
 .menu {
   display: flex;
   flex-direction: column;
@@ -444,11 +496,13 @@ a:link {
 }
 .menu__picture {
   width: 100%;
+  height: auto;
 }
 .menu__picture img {
-  object-fit: cover;
   width: 100%;
-  max-height: 15rem;
+  height: auto;
+  object-fit: cover;
+  max-height: 26rem;
 }
 .menu__description {
   display: flex;
@@ -457,8 +511,8 @@ a:link {
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
-  width: 100%;
-  height: auto;
+  max-width: 1600px;
+  max-height: auto;
   background-color: #fafafa;
 }
 .menu__description .title {
@@ -472,23 +526,19 @@ a:link {
   height: auto;
   background-color: #fafafa;
   padding: 2rem;
-  margin-top: -2rem;
-  border-top-left-radius: 3rem;
-  border-top-right-radius: 3rem;
+  margin-top: -3.5rem;
+  border-radius: 3rem 3rem 0 0;
   position: relative;
   z-index: 1;
-}
-.menu__description .title h2 {
-  font-family: "Shrikhand", cursive;
 }
 .menu__description .meal {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  align-items: start;
   flex-wrap: wrap;
   column-gap: normal;
-  width: 95%;
+  width: 100%;
   height: auto;
 }
 .menu__description .meal .plate {
@@ -498,21 +548,20 @@ a:link {
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
-  /*               @include size (100%);*/
-  /*    @include minsize (400px);*/
 }
 .menu__description .meal .plate h4 {
+  margin: 1.5rem 0 0.5rem 0;
   padding-left: 1rem;
   align-self: start;
   font-weight: normal;
 }
 .menu__description .meal .plate h4::after {
   content: "";
-  background: #99E2d0;
-  display: block;
   width: 2.5rem;
   height: 0.2rem;
+  margin-top: 0.4rem;
   background: #99E2d0;
+  display: block;
 }
 .menu__description .meal .plate .plate-proposal {
   display: flex;
@@ -523,20 +572,26 @@ a:link {
   column-gap: normal;
   width: 25vw;
   height: auto;
-  min-width: 350px;
+  min-width: 356px;
   min-height: auto;
+  max-width: 500px;
+  max-height: auto;
   background-color: #fff;
   padding: 0;
-  border-radius: 0.75rem;
-  margin: 1.5rem 0.5rem;
+  border-radius: 23px;
+  margin: 0.75rem 0.5rem;
   height: 4.4rem;
   overflow: hidden;
   box-shadow: 2px 2px 14px #aaaaaa;
+  animation: delayed-display 1s both;
+}
+.menu__description .meal .plate .plate-proposal:hover {
+  cursor: pointer;
 }
 .menu__description .meal .plate .plate-proposal .description {
   overflow: hidden;
 }
-.menu__description .meal .plate .plate-proposal .description h3, .menu__description .meal .plate .plate-proposal .description p {
+.menu__description .meal .plate .plate-proposal .description h3, .menu__description .meal .plate .plate-proposal .description h5 {
   margin: 0.5rem;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -557,15 +612,15 @@ a:link {
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
-  background-color: #99E2d0;
   width: 60px;
   height: 100%;
-  margin-right: -64px;
+  background-color: #99E2d0;
+  margin-right: -65px;
 }
 .menu__description .meal .plate .plate-proposal .selectbox i {
-  background-color: white;
+  background-color: #fff;
   color: #99E2d0;
-  border-radius: 100px;
+  border-radius: 23px;
   font-size: 1.5em;
   transform: rotate(180deg);
 }
@@ -573,23 +628,22 @@ a:link {
   animation: checkbox-rotate 0.5s both;
 }
 .menu__description .meal .plate .plate-proposal:hover .selectbox {
-  margin-right: 0px;
   min-width: 4rem;
+  min-height: auto;
+  margin-right: 0px;
   transition: margin-right 0.5s;
 }
-.menu__description .order input {
-  width: 220px;
-  height: 50px;
-  margin: 2rem 0;
-  color: #fff;
-  font-size: 18px;
-  background: linear-gradient(#ff79da, #9356DC);
-  border: none;
-  border-radius: 50px;
+.menu__description .meal .plate .plate-proposal:nth-child(2) {
+  animation-delay: 0.5s;
 }
-.menu__description .order input:hover {
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
-  opacity: 1.5;
+.menu__description .meal .plate .plate-proposal:nth-child(3) {
+  animation-delay: 0.7s;
+}
+.menu__description .meal .plate .plate-proposal:nth-child(4) {
+  animation-delay: 0.9s;
+}
+.menu__description .meal .plate .plate-proposal:last-child {
+  animation-delay: 1.1s;
 }
 
 /*# sourceMappingURL=style.css.map */

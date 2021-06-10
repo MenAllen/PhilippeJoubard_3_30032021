@@ -1,9 +1,8 @@
 .restaurants { 
     margin-top: 1rem;
-    padding: 2rem 0;
-    background-color: $light-grey; 
+    padding: 3rem 0;
+    background-color: $background-color-restaurants; 
     &__list {
-        background-color: $light-grey; 
         @include flex-setup(normal, row, space-around, center, wrap);
         @media (max-width: 768px) {
             flex-direction: column;
@@ -12,24 +11,31 @@
             @include flex-setup(10vw, row, space-around, center, wrap);
         }
         .affiche {
-            box-shadow: $shadow;
-            border-radius: 15px;
+            box-shadow: $shadow-restaurant-card;
+            border-radius: $border-radius-card;
             @include flex-setup(normal, column, space-around, center);
             margin: 1rem 0;
+            position: relative;
             .image {
                 @include size(30vw, auto);
                 @include minsize(335px, 175px);
-/*@include minsize(270px, 140px);*/
                 object-fit: cover;
                 border-top-left-radius: 15px;
                 border-top-right-radius: 15px;
             }
             .legend {
-                @include size(100%);
                 @include flex-setup(normal, row, space-between, center);
+                @include size(100%);
+                padding: 0.5rem 0;
                 .description {
                     @include flex-setup(normal, column, left, left);
                 }
+            }
+            .label-nouveau {
+                @extend %label-nouveau;
+            }
+            &:hover {
+                @extend %hover-effect;
             }
         }
     }

@@ -2,15 +2,11 @@
     background-color: rgba(0, 0, 0, 80%);
     @include flex-setup (normal, column, flex-start, left);
     padding: 2rem;
-    color: #fff;
-    .logo-text {
-        font-family: Shrikhand;
-        text-align: left;
-        padding-bottom: 1rem;
-    }
+    color: $color-text-footer;
     ul {
         @include flex-setup (normal, row, space-between, center, wrap);
         @include size (80%);
+        padding-top: 1rem;
         @media (max-width: 768px) {
             @include flex-setup (normal, column, center, start);
         }
@@ -21,7 +17,7 @@
                 padding-right: 1rem;
             }
             a {
-                color: #fff;
+                color: $color-text-footer;
             }
         }
     }

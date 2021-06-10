@@ -1,7 +1,7 @@
 @mixin loader-bloc ($color: $color-secondary, $timing: 2s) {
 	content: "";
 	position: absolute;
-	border-radius: 50%;
+	border-radius: $border-radius-loader-circle;
 	border: 5px solid transparent;
 	border-top-color: $color;
 	animation: spin $timing linear 3;
@@ -17,17 +17,9 @@
 	min-height: $height;
 }
 
-@mixin format-input {
-	margin: 2rem 0;
-	color: #fff;
-	font-size: 18px;
-	background: linear-gradient($color-secondary, $color-primary);
-	border: none;
-	border-radius: 50px;
-	&:hover {
-		box-shadow: $shadow-input; 
-		opacity: 1.5;             
-	}
+@mixin maxsize ($width, $height: auto) {
+	max-width: $width;
+	max-height: $height;
 }
 
 @mixin flex-setup ($gap: normal, $direction: row, $justify: center, $align: center, $wrap: nowrap) {
@@ -37,4 +29,75 @@
 	align-items: $align;
 	flex-wrap: $wrap;
 	column-gap: $gap;
+}
+
+@mixin center-text ($padding-side: 0, $line-height: 1.2) {
+	text-align: center;
+    padding: 1rem;
+	line-height: $line-height;
+	@if $padding-side != 0 {
+		padding-right: $padding-side;
+		padding-left: $padding-side;
+	}
+}
+
+%center-text-location {
+	text-align: center;
+	padding: 1rem;
+	line-height: 1;
+}
+
+%center-text-title {
+	text-align: center;
+	padding: 0.5rem 1rem;
+	line-height: 1.2;
+}
+
+%center-text-para {
+	text-align: center;
+	padding: 0.5rem 0;
+	line-height: 1.2;
+}
+
+%center-text-howto {
+	text-align: center;
+	padding: 1rem;
+	line-height: 1;
+}
+
+%btn-nav {
+	@include size(185px, 20px);
+	margin: 1.5rem 0;
+	padding: 15px;
+	text-align: center;
+	color: $color-text-btn-nav;
+	font-size: 16px;
+	font-weight: 400;
+	background: linear-gradient($color-secondary, $color-primary);
+	border: none;
+	border-radius: $border-radius-btn-nav;
+	&:hover {
+		box-shadow: $shadow-btn-on-hover; 
+		opacity: 1.5;
+		cursor: pointer;
+		transition: 0.4s;          
+	}
+}
+
+%label-nouveau {
+	@include size (4.3rem, 0.8rem);
+	background-color: $color-tertiary;
+	color: darken($color-tertiary, $amount: 40);font-size: 14px;
+	font-weight: bold;
+	padding: 0.5rem 0.8rem 0.5rem 0.5rem;
+	text-align: center;
+	border-radius: $border-radius-label-nouveau;
+	position: absolute;
+	top: 18px; right: 10px; bottom: 0px;
+}
+
+%hover-effect {
+	box-shadow: $shadow-none;
+	background-color: $background-color-hover;
+	transition: 0.4s;
 }

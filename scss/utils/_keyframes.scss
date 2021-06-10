@@ -1,8 +1,42 @@
+/* Loader Animation: rotations during 3s */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Loader Animation : end after 3s */
+@keyframes load {
+	100% {
+		opacity: 0;
+		z-index: -10;
+	}
+}
+
+/* Menu Checkbox animation: rotate icon on hover */
 @keyframes checkbox-rotate {
 	0% {
 		transform: rotate(180deg);
 	}
 	100% {
 		transform: rotate(360deg);
+	}
+}
+
+/* Menu Display Animation: display hiding */
+@keyframes delayed-display {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(100%);
+		transform: translateY(100%);
+		visibility: visible;
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
 	}
 }

@@ -1,11 +1,40 @@
+/* Themes colors */
 $color-primary: #9356DC;
 $color-secondary: #ff79da;
 $color-tertiary: #99E2d0;
-
 $color-quaterly: #e99414;
-$shadow-grey: #f2f2f2;
-$light-grey: #fafafa;
-$dark-grey: #333333;
 
-$shadow: 10px 10px 10px 0px rgb(0,0,0, 15%);
-$shadow-input: 0px 0px 10px 5px rgb(0,0,0, 25%);
+/*  Colors used for background */
+$background-color-restaurants: #fafafa;
+$background-color-3steps: #fafafa;
+$background-color-presentation: #fafafa;
+$background-color-location: #f2f2f2;
+$background-color-menu-description: #fafafa;
+$background-color-plate-proposal: #fff;
+$background-color-select-icon: #fff;
+$background-color-loader: hsla(0, 0%, 100%, 0.7);
+$background-color-howto: #fff;
+$background-color-hover: #f2f2f2;
+
+/* Miscellaneous colors */
+$color-step-card-123: #fff;
+$color-heart-icon: transparent;
+$color-reset-after-visited: #000;
+$color-text-footer: #fff;
+$color-backarrow-header: #000;
+$color-text-btn-nav: #fff;
+
+/* shadows used for buttons and cards */
+$shadow-step-card: 10px 10px 10px 0px rgb(0,0,0, 15%);
+$shadow-restaurant-card: 10px 10px 10px 0px rgb(0,0,0, 15%);
+$shadow-btn-on-hover: 0px 0px 10px 5px rgb(0,0,0, 25%);
+$shadow-plate-proposal: 2px 2px 14px #aaaaaa;
+$shadow-none: unset;
+
+/* Border radius */
+$border-radius-loader-circle: 50%;
+$border-radius-number-circle: 50%;
+$border-radius-card: 23px;
+$border-radius-label-nouveau: 2px;
+$border-radius-btn-nav: 100px;
+

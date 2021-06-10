@@ -4,10 +4,10 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- Police Roboto Normal & Bold -->
-		<link rel="preconnect" href="https://fonts.gstatic.com" />
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet" />
-
+		<!-- Police Roboto & Shrikhand -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">
+		
 		<!-- Icônes Fontawesome -->
 		<script src="https://kit.fontawesome.com/6beed07ec0.js" crossorigin="anonymous"></script>
 
@@ -37,85 +37,94 @@
 
           		<div class="presentation__location">
             		<i class="fas fa-map-marker-alt"></i>
-            		<h3 class="text-center">Paris, Belleville</h3>
+            		<h3 class=center-text-location>Paris, Belleville</h3>
         		</div>
 
           		<div class="presentation__search">
-              		<h2 class="text-center">Réservez le menu qui vous convient</h2>
-              		<p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
-              		<input type="button" value="Explorer nos restaurants">
+              		<h2 class="center-text-title">Réservez le menu qui vous convient</h2>
+              		<h5 class="center-text-para">Découvrez des restaurants d'exception, sélectionnés par nos soins</h5>
+ 					<a href="#anchor-restaurants" class="button">Explorer nos restaurants</a>
         		</div>
 
         		<div class="presentation__howto">
-            		<h2 class="h2-left">Fonctionnement</h2>
+            		<h2 class="shift-left">Fonctionnement</h2>
             		<div class="three-steps">
               			<div class="step-card">
 				  			<h3 class="number">1</h3>
 				  			<i class="fas fa-mobile-alt"></i>
-				  			<h3 class="text-center">Choisissez un restaurant</h3>
+				  			<h3 class="center-text-howto">Choisissez un restaurant</h3>
 			  			</div>
               			<div class="step-card">
 							<h3 class="number">2</h3>
 							<i class="fas fa-list"></i>
-							<h3 class="text-center">Composez votre menu</h3>
+							<h3 class="center-text-howto">Composez votre menu</h3>
 			  			</div>
               			<div class="step-card">
 							<h3 class="number">3</h3>
 							<i class="fas fa-store"></i>
-							<h3 class="text-center">Dégustez au restaurant</h3>
+							<h3 class="center-text-howto">Dégustez au restaurant</h3>
 			  			</div>
             		</div>
         		</div>
         	</section>
         
-			<section class="restaurants">
-				<h2 class="h2-left">Restaurants</h2>
+			<section id="anchor-restaurants" class="restaurants">
+				<h2 class="shift-left">Restaurants</h2>
 				<div class="restaurants__list">
 
 					<div class="affiche">
 						<a href="./lapalettedugout.html">
 							<img class="image" src="./images/lapalettedugout.jpg" alt="La Palette du Goût">
+							<div class="label-nouveau">Nouveau</div>
 							<div class="legend">
 								<div class="description">
-									<h3 class="h2-left">La palette du goût</h3>
-									<p class="p-left">Ménilmontant</p>
+									<h3 class="shift-left">La palette du goût</h3>
+									<p class="shift-left">Ménilmontant</p>
 								</div>						
 								<i class="fas fa-heart"></i>       
 							</div>
+						
 						</a>	
 					</div>
 
 					<div class="affiche">
-						<img class="image" src="./images/lanoteenchantee.jpg" alt="La Palette du Goût">
-						<div class="legend">
-							<div class="description">
-								<h3 class="h2-left">La note enchantée</h3>
-								<p class="p-left">Charonne</p>
+						<a href="./lanoteenchantee.html">
+							<img class="image" src="./images/lanoteenchantee.jpg" alt="La Palette du Goût">
+							<div class="legend">
+								<div class="description">
+									<h3 class="shift-left">La note enchantée</h3>
+									<p class="shift-left">Charonne</p>
+								</div>
+								<i class="fas fa-heart"></i>       
 							</div>
-							<i class="fas fa-heart"></i>       
-						</div>
+							<div class="label-nouveau">Nouveau</div>
+						</a>
 					</div>
 
 					<div class="affiche">
-						<img class="image" src="./images/alafrancaise.jpg" alt="A la française">
-						<div class="legend">
-							<div class="description">
-								<h3 class="h2-left">A la française</h3>
-								<p class="p-left">Cité Rouge</p>
+						<a href="./alafrancaise.html">
+							<img class="image" src="./images/alafrancaise.jpg" alt="A la française">
+							<div class="legend">
+								<div class="description">
+									<h3 class="shift-left">A la française</h3>
+									<p class="shift-left">Cité Rouge</p>
+								</div>
+								<i class="fas fa-heart"></i>       
 							</div>
-							<i class="fas fa-heart"></i>       
-						</div>
+						</a>
 					</div>
 
 					<div class="affiche">
-						<img class="image" src="./images/ledelicedessens.jpg" alt="La Palette du Goût">
-						<div class="legend">
-							<div class="description">
-								<h3 class="h2-left">Le délice des sens</h3>
-								<p class="p-left">Folie-Méricourt</p>
+						<a href="./ledelicedessens.html">
+							<img class="image" src="./images/ledelicedessens.jpg" alt="La Palette du Goût">
+							<div class="legend">
+								<div class="description">
+									<h3 class="shift-left">Le délice des sens</h3>
+									<p class="shift-left">Folie-Méricourt</p>
+								</div>
+								<i class="fas fa-heart"></i>       
 							</div>
-							<i class="fas fa-heart"></i>       
-						</div>
+						</a>
 					</div>
 
 				</div>
@@ -127,12 +136,12 @@
 
 		<footer class="footer">
 
-			<h2 class="logo-text">ohmyfood</h2>	
+			<h2 class="shrikhand">ohmyfood</h2>	
 			<ul>
 				<li><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
 				<li><a href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
 				<li><a href="#">Mentions legales</a></li>
-				<li><a href="#">Contact</a></li>
+				<li><a href="mailto:pjoubard56@gmail.fr">Contact</a></li>
 			</ul>
 
 		</footer>

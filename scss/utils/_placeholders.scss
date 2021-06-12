@@ -1,0 +1,117 @@
+/* Position formats */
+
+%center-text-location {
+    text-align: center;
+    padding: 1rem;
+    line-height: 1;
+}
+
+%center-text-title {
+    text-align: center;
+    padding: 0.5rem 1rem;
+    line-height: 1.2;
+}
+
+%center-text-para {
+    text-align: center;
+    padding: 0.5rem 0;
+    line-height: 1.2;
+}
+
+%center-text-howto {
+    text-align: center;
+    padding: 1rem;
+    line-height: 1;
+}
+
+/* Button format */
+
+%btn-nav {
+    @include size(185px, 20px);
+    margin: 1.5rem 0;
+    padding: 15px;
+    text-align: center;
+    color: $color-text-btn-nav;
+    font-size: 16px;
+    font-weight: 400;
+    background: linear-gradient($color-secondary, $color-primary);
+    border: none;
+    border-radius: $border-radius-btn-nav;
+    &:hover {
+        box-shadow: $shadow-btn-on-hover;
+        opacity: 1;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+}
+
+/* label format stck on some restaurant image */
+
+%label-nouveau {
+    @include size(4.3rem, 0.8rem);
+    background-color: $color-tertiary;
+    color: darken($color-tertiary, $amount: 40);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0.5rem 0.8rem 0.5rem 0.5rem;
+    text-align: center;
+    border-radius: $border-radius-label-nouveau;
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    bottom: 0px;
+}
+
+%hover-effect {
+    box-shadow: $shadow-none;
+    background-color: $background-color-hover;
+    transition: 0.4s;
+}
+
+/* Back arrow format on header page */
+
+%header-backarrow {
+    @include position(absolute, $top: 25px, $left: 20px);
+    font-size: 20px;
+    text-decoration: none;
+    color: $color-backarrow-header;
+}
+
+/* miscellaneous formats on Menu pages */
+
+%menu-plate-title {
+    margin: 1.5rem 0 0.5rem 0;
+    padding-left: 1rem;
+    align-self: start;
+    &::after {
+        content: "";
+        @include size(2.5rem, 0.2rem);
+        margin-top: 0.4rem;
+        background: $color-tertiary;
+        display: block;
+    }
+}
+
+%menu-description {
+    margin: 0.5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
+    overflow: hidden;
+}
+
+%menu-price {
+    line-height: 6.25rem;
+    padding: 0 0.75rem 0 0;
+    margin-left: auto;
+    align-self: start;
+    font-weight: bold;
+}
+
+%menu-select {
+    background-color: $background-color-select-icon;
+    color: $color-tertiary;
+    border-radius: $border-radius-card;
+    font-size: 1.5em;
+    transform: rotate(180deg);
+}

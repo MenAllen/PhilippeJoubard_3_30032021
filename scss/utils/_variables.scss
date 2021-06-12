@@ -1,7 +1,7 @@
 /* Themes colors */
-$color-primary: #9356DC;
+$color-primary: #9356dc;
 $color-secondary: #ff79da;
-$color-tertiary: #99E2d0;
+$color-tertiary: #99e2d0;
 $color-quaterly: #e99414;
 
 /*  Colors used for background */
@@ -25,11 +25,12 @@ $color-backarrow-header: #000;
 $color-text-btn-nav: #fff;
 
 /* shadows used for buttons and cards */
-$shadow-step-card: 10px 10px 10px 0px rgb(0,0,0, 15%);
-$shadow-restaurant-card: 10px 10px 10px 0px rgb(0,0,0, 15%);
-$shadow-btn-on-hover: 0px 0px 10px 5px rgb(0,0,0, 25%);
+$shadow-step-card: 10px 10px 10px 0px rgb(0, 0, 0, 15%);
+$shadow-restaurant-card: 10px 10px 10px 0px rgb(0, 0, 0, 15%);
+$shadow-btn-on-hover: 0px 0px 10px 5px rgb(0, 0, 0, 25%);
 $shadow-plate-proposal: 2px 2px 14px #aaaaaa;
 $shadow-none: unset;
+$shadow-presentation-location: inset 0px 10px 20px -15px rgba(0, 0, 0, 55%);
 
 /* Border radius */
 $border-radius-loader-circle: 50%;
@@ -37,4 +38,13 @@ $border-radius-number-circle: 50%;
 $border-radius-card: 23px;
 $border-radius-label-nouveau: 2px;
 $border-radius-btn-nav: 100px;
+$border-radius-menu-title: 3rem 3rem 0 0;
 
+/* z-index values */
+$top: 100;
+$below: -100;
+
+/* Media Query */
+$medium: 768px;
+$medium-up: "only screen and (min-width: #{768px})";
+$padding: 20px;

@@ -1,14 +1,14 @@
-.restaurants { 
+.restaurants {
     margin-top: 1rem;
     padding: 3rem 0;
-    background-color: $background-color-restaurants; 
+    background-color: $background-color-restaurants;
     &__list {
         @include flex-setup(normal, row, space-around, center, wrap);
         @media (max-width: 768px) {
             flex-direction: column;
         }
         @media (min-width: 1020px) {
-            @include flex-setup(10vw, row, space-around, center, wrap);
+            @include flex-setup(normal, row, space-around, center, wrap);
         }
         .affiche {
             box-shadow: $shadow-restaurant-card;
@@ -17,7 +17,7 @@
             margin: 1rem 0;
             position: relative;
             .image {
-                @include size(30vw, auto);
+                @include size(35vw, auto);
                 @include minsize(335px, 175px);
                 object-fit: cover;
                 border-top-left-radius: 15px;
@@ -25,10 +25,10 @@
             }
             .legend {
                 @include flex-setup(normal, row, space-between, center);
-                @include size(100%);
                 padding: 0.5rem 0;
                 .description {
-                    @include flex-setup(normal, column, left, left);
+                    @include flex-setup(normal, column, start, center);
+                    @include size(100%);
                 }
             }
             .label-nouveau {

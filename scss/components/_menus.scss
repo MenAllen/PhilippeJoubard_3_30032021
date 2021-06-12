@@ -1,61 +1,57 @@
 .menu {
-    @include flex-setup (normal, column, center, center);
+    @include flex-setup(normal, column, center, center);
 
     &__picture {
-        @include size (100%);
+        @include size(100%);
         img {
-            @include size (100%);
+            @include size(100%);
+            @include maxsize(100%, 26rem);
             object-fit: cover;
-            max-height: 26rem;
         }
     }
 
     &__description {
-        @include flex-setup (normal, column, space-between, center);
-        @include maxsize (1600px);
-
-        background-color: $background-color-menu-description;  
+        @include flex-setup(normal, column, space-between, center);
+        @include size(83%);
+        @include maxsize(3000px);
+        background-color: $background-color-menu-description;
 
         .title {
-            @include flex-setup (normal, row, space-between, center);
-            @include size (95%);
-            background-color: $background-color-menu-description;     
+            @include flex-setup(normal, row, space-between, center);
+            @include size(100%);
+            background-color: $background-color-menu-description;
             padding: 2rem;
             margin-top: -3.5rem;
-            border-radius: 3rem 3rem 0 0;
+            border-radius: $border-radius-menu-title;
             position: relative;
-            z-index: 1;   
+            z-index: 1;
         }
 
         .meal {
-            @include flex-setup (normal, row, space-around, start, wrap); 
-            @include size(100%);           
+            @include flex-setup(normal, row, space-around, start, wrap);
+            /*      @include size(100%);*/
 
             .plate {
-                @include flex-setup (normal, column, center, center);
+                @include flex-setup(normal, column, center, center);
                 h4 {
-                    margin: 1.5rem 0 0.5rem 0;
-                    padding-left: 1rem;
-                    align-self: start;
-                    font-weight: normal;
+                    @extend %menu-plate-title;
                     &::after {
-                        content: '';
-                        @include size (2.5rem, 0.2rem);
+                        content: "";
+                        @include size(2.5rem, 0.2rem);
                         margin-top: 0.4rem;
                         background: $color-tertiary;
                         display: block;
                     }
                 }
                 .plate-proposal {
-                    @include flex-setup (normal, row, space-between, center);
-                    @include size (25vw);
-                    @include minsize (356px);
-                    @include maxsize (500px);
+                    @include flex-setup(normal, row, space-between, center);
+                    @include size(25vw, 4.4rem);
+                    @include minsize(22rem, 4.4rem);
+                    @include maxsize(32rem, auto);
                     background-color: $background-color-plate-proposal;
                     padding: 0;
                     border-radius: $border-radius-card;
                     margin: 0.75rem 0.5rem;
-                    height: 4.4rem;
                     overflow: hidden;
                     box-shadow: $shadow-plate-proposal;
                     animation: delayed-display 1s both;
@@ -64,40 +60,29 @@
                     }
                     .description {
                         overflow: hidden;
-                        h3, h5 {
-                            margin: 0.5rem;
-                            white-space: nowrap;
-                            text-overflow: ellipsis;
-                            text-align: left;
-                            overflow: hidden;
+                        h3,
+                        h5 {
+                            @extend %menu-description;
                         }
-                    }  
+                    }
                     .price {
-                        line-height: 100px;
-                        padding:  0 0.75rem 0 0;
-                        margin-left: auto;
-                        align-self: start;
-                        font-weight: bold;
-                    }   
+                        @extend %menu-price;
+                    }
                     .selectbox {
-                        @include flex-setup (normal, row, center, center);
-                        @include size (60px, 100%);
+                        @include flex-setup(normal, row, center, center);
+                        @include size(60px, 100%);
                         background-color: $color-tertiary;
-                        margin-right: -65px;
+                        margin-right: -4rem;
                         i {
-                            background-color: $background-color-select-icon;
-                            color: $color-tertiary;
-                            border-radius: $border-radius-card;
-                            font-size: 1.5em;
-                            transform: rotate(180deg);
+                            @extend %menu-select;
                         }
                     }
                     &:hover .selectbox i {
                         animation: checkbox-rotate 0.5s both;
                     }
                     &:hover .selectbox {
-                        @include minsize (4rem);
-                        margin-right: 0px;
+                        @include minsize(4rem);
+                        margin-right: 0rem;
                         transition: margin-right 0.5s;
                     }
                     &:nth-child(2) {
@@ -109,10 +94,13 @@
                     &:nth-child(4) {
                         animation-delay: 0.9s;
                     }
-
-                    &:last-child {
+                    &:nth-child(5) {
                         animation-delay: 1.1s;
                     }
+                    /*
+                    &:last-child {
+                        animation-delay: 1.1s;
+                    } */
                 }
             }
         }

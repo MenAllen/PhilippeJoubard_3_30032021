@@ -3,6 +3,8 @@
 /* Miscellaneous colors */
 /* shadows used for buttons and cards */
 /* Border radius */
+/* z-index values */
+/* Media Query */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -57,32 +59,38 @@ table {
   border-spacing: 0;
 }
 
-body {
+body,
+main {
   font-family: "Roboto", sans-serif;
   width: 100%;
   overflow-x: hidden;
+}
+
+h2,
+h3 {
+  font-weight: bold;
 }
 
 h2 {
   font-size: 24px;
 }
 
-h3, p {
+h3,
+p {
   font-size: 18px;
 }
 
-p, a, a:visited, a:link {
+p,
+a,
+a:visited,
+a:link {
   text-decoration: none;
   color: #000;
 }
 
-h1, h2, h3, h4, span {
-  font-weight: bold;
-}
-
 .shift-left {
-  text-align: left;
-  padding: 0 0 0.5rem 0.8rem;
+  align-self: start;
+  padding: 0 0 0.5rem 4%;
 }
 
 .shrikhand {
@@ -100,18 +108,19 @@ h1, h2, h3, h4, span {
 
 .fa-heart:hover {
   background: linear-gradient(to right, #ff79da, #9356dc);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-stroke: 0px;
   opacity: 1;
   transition: all 0.8s ease-in-out;
 }
 
-li a, li i {
+li a,
+li i {
   color: #fff;
   text-decoration: none;
 }
 
+/* Position formats */
 .center-text-location {
   text-align: center;
   padding: 1rem;
@@ -136,6 +145,7 @@ li a, li i {
   line-height: 1;
 }
 
+/* Button format */
 .menu__description .button, .presentation__search .button {
   width: 185px;
   height: 20px;
@@ -145,21 +155,22 @@ li a, li i {
   color: #fff;
   font-size: 16px;
   font-weight: 400;
-  background: linear-gradient(#ff79da, #9356DC);
+  background: linear-gradient(#ff79da, #9356dc);
   border: none;
   border-radius: 100px;
 }
 .menu__description .button:hover, .presentation__search .button:hover {
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.25);
-  opacity: 1.5;
+  opacity: 1;
   cursor: pointer;
   transition: 0.4s;
 }
 
+/* label format stck on some restaurant image */
 .restaurants__list .affiche .label-nouveau {
   width: 4.3rem;
   height: 0.8rem;
-  background-color: #99E2d0;
+  background-color: #99e2d0;
   color: #278870;
   font-size: 14px;
   font-weight: bold;
@@ -178,6 +189,58 @@ li a, li i {
   transition: 0.4s;
 }
 
+/* Back arrow format on header page */
+.back-arrow {
+  position: absolute;
+  top: 25px;
+  right: 0px;
+  bottom: 0px;
+  left: 20px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #000;
+}
+
+/* miscellaneous formats on Menu pages */
+.menu__description .meal .plate h4 {
+  margin: 1.5rem 0 0.5rem 0;
+  padding-left: 1rem;
+  align-self: start;
+}
+.menu__description .meal .plate h4::after {
+  content: "";
+  width: 2.5rem;
+  height: 0.2rem;
+  margin-top: 0.4rem;
+  background: #99e2d0;
+  display: block;
+}
+
+.menu__description .meal .plate .plate-proposal .description h3,
+.menu__description .meal .plate .plate-proposal .description h5 {
+  margin: 0.5rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+  overflow: hidden;
+}
+
+.menu__description .meal .plate .plate-proposal .price {
+  line-height: 6.25rem;
+  padding: 0 0.75rem 0 0;
+  margin-left: auto;
+  align-self: start;
+  font-weight: bold;
+}
+
+.menu__description .meal .plate .plate-proposal .selectbox i {
+  background-color: #fff;
+  color: #99e2d0;
+  border-radius: 23px;
+  font-size: 1.5em;
+  transform: rotate(180deg);
+}
+
 /* Loader Animation: rotations during 3s */
 @keyframes spin {
   0% {
@@ -191,7 +254,7 @@ li a, li i {
 @keyframes load {
   100% {
     opacity: 0;
-    z-index: -10;
+    z-index: -100;
   }
 }
 /* Menu Checkbox animation: rotate icon on hover */
@@ -224,21 +287,9 @@ li a, li i {
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
-  width: 100%;
-  height: auto;
   position: relative;
   padding: 1rem;
   margin-bottom: 0.3rem;
-  /*  box-shadow: 0px 0px 15px rgb(0,0,0, 20%);*/
-}
-
-.home {
-  position: absolute;
-  top: 25px;
-  left: 20px;
-  font-size: 20px;
-  text-decoration: none;
-  color: #000;
 }
 
 .footer {
@@ -246,7 +297,7 @@ li a, li i {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: left;
+  align-items: start;
   flex-wrap: nowrap;
   column-gap: normal;
   padding: 2rem;
@@ -304,12 +355,16 @@ li a, li i {
   position: absolute;
   border-radius: 50%;
   border: 5px solid transparent;
-  border-top-color: #9356DC;
-  animation: spin 1s linear 3;
+  border-top-color: #9356dc;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
   width: 150px;
   height: 150px;
   vertical-align: middle;
-  border-bottom-color: #99E2d0;
+  border-bottom-color: #99e2d0;
+  animation: spin 1s linear 3;
 }
 .loader::after {
   content: "";
@@ -317,11 +372,11 @@ li a, li i {
   border-radius: 50%;
   border: 5px solid transparent;
   border-top-color: #ff79da;
-  animation: spin 2s linear 3;
   top: 10px;
   right: 10px;
   bottom: 10px;
   left: 10px;
+  animation: spin 2s linear 3;
 }
 .loader::before {
   content: "";
@@ -329,17 +384,16 @@ li a, li i {
   border-radius: 50%;
   border: 5px solid transparent;
   border-top-color: #e99414;
-  animation: spin 3s linear 3;
   top: 25px;
   right: 25px;
   bottom: 25px;
   left: 25px;
+  animation: spin 3s linear 3;
 }
 
 .presentation {
   background-color: #fafafa;
-  width: 100%;
-  height: auto;
+  /*  @include size(100%);*/
 }
 .presentation__location {
   display: flex;
@@ -364,7 +418,7 @@ li a, li i {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
   background-color: #fff;
@@ -377,6 +431,8 @@ li a, li i {
   align-items: center;
   flex-wrap: wrap;
   column-gap: normal;
+  width: 100%;
+  height: auto;
   margin: 0.5rem 0;
 }
 .presentation__howto .three-steps .step-card {
@@ -406,14 +462,14 @@ li a, li i {
   column-gap: normal;
   width: 2rem;
   height: 2rem;
-  background-color: #9356DC;
-  color: #fff;
-  border-radius: 50%;
   position: absolute;
   top: 1.3rem;
   right: 0px;
   bottom: 0px;
   left: -10px;
+  background-color: #9356dc;
+  color: #fff;
+  border-radius: 50%;
 }
 .presentation__howto .three-steps .step-card i {
   margin-left: 2rem;
@@ -443,7 +499,7 @@ li a, li i {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    column-gap: 10vw;
+    column-gap: normal;
   }
 }
 .restaurants__list .affiche {
@@ -459,7 +515,7 @@ li a, li i {
   position: relative;
 }
 .restaurants__list .affiche .image {
-  width: 30vw;
+  width: 35vw;
   height: auto;
   min-width: 335px;
   min-height: 175px;
@@ -474,17 +530,17 @@ li a, li i {
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
-  width: 100%;
-  height: auto;
   padding: 0.5rem 0;
 }
 .restaurants__list .affiche .legend .description {
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: left;
+  justify-content: start;
+  align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
+  width: 100%;
+  height: auto;
 }
 .menu {
   display: flex;
@@ -501,8 +557,9 @@ li a, li i {
 .menu__picture img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  max-width: 100%;
   max-height: 26rem;
+  object-fit: cover;
 }
 .menu__description {
   display: flex;
@@ -511,8 +568,10 @@ li a, li i {
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
-  max-width: 1600px;
-  max-height: auto;
+  width: 83%;
+  height: auto;
+  max-width: 3000px;
+  max-height: 100%;
   background-color: #fafafa;
 }
 .menu__description .title {
@@ -522,7 +581,7 @@ li a, li i {
   align-items: center;
   flex-wrap: nowrap;
   column-gap: normal;
-  width: 95%;
+  width: 100%;
   height: auto;
   background-color: #fafafa;
   padding: 2rem;
@@ -538,8 +597,7 @@ li a, li i {
   align-items: start;
   flex-wrap: wrap;
   column-gap: normal;
-  width: 100%;
-  height: auto;
+  /*      @include size(100%);*/
 }
 .menu__description .meal .plate {
   display: flex;
@@ -549,18 +607,12 @@ li a, li i {
   flex-wrap: nowrap;
   column-gap: normal;
 }
-.menu__description .meal .plate h4 {
-  margin: 1.5rem 0 0.5rem 0;
-  padding-left: 1rem;
-  align-self: start;
-  font-weight: normal;
-}
 .menu__description .meal .plate h4::after {
   content: "";
   width: 2.5rem;
   height: 0.2rem;
   margin-top: 0.4rem;
-  background: #99E2d0;
+  background: #99e2d0;
   display: block;
 }
 .menu__description .meal .plate .plate-proposal {
@@ -571,39 +623,28 @@ li a, li i {
   flex-wrap: nowrap;
   column-gap: normal;
   width: 25vw;
-  height: auto;
-  min-width: 356px;
-  min-height: auto;
-  max-width: 500px;
+  height: 4.4rem;
+  min-width: 22rem;
+  min-height: 4.4rem;
+  max-width: 32rem;
   max-height: auto;
   background-color: #fff;
   padding: 0;
   border-radius: 23px;
   margin: 0.75rem 0.5rem;
-  height: 4.4rem;
   overflow: hidden;
   box-shadow: 2px 2px 14px #aaaaaa;
   animation: delayed-display 1s both;
+  /*
+  &:last-child {
+      animation-delay: 1.1s;
+  } */
 }
 .menu__description .meal .plate .plate-proposal:hover {
   cursor: pointer;
 }
 .menu__description .meal .plate .plate-proposal .description {
   overflow: hidden;
-}
-.menu__description .meal .plate .plate-proposal .description h3, .menu__description .meal .plate .plate-proposal .description h5 {
-  margin: 0.5rem;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  text-align: left;
-  overflow: hidden;
-}
-.menu__description .meal .plate .plate-proposal .price {
-  line-height: 100px;
-  padding: 0 0.75rem 0 0;
-  margin-left: auto;
-  align-self: start;
-  font-weight: bold;
 }
 .menu__description .meal .plate .plate-proposal .selectbox {
   display: flex;
@@ -614,15 +655,8 @@ li a, li i {
   column-gap: normal;
   width: 60px;
   height: 100%;
-  background-color: #99E2d0;
-  margin-right: -65px;
-}
-.menu__description .meal .plate .plate-proposal .selectbox i {
-  background-color: #fff;
-  color: #99E2d0;
-  border-radius: 23px;
-  font-size: 1.5em;
-  transform: rotate(180deg);
+  background-color: #99e2d0;
+  margin-right: -4rem;
 }
 .menu__description .meal .plate .plate-proposal:hover .selectbox i {
   animation: checkbox-rotate 0.5s both;
@@ -630,7 +664,7 @@ li a, li i {
 .menu__description .meal .plate .plate-proposal:hover .selectbox {
   min-width: 4rem;
   min-height: auto;
-  margin-right: 0px;
+  margin-right: 0rem;
   transition: margin-right 0.5s;
 }
 .menu__description .meal .plate .plate-proposal:nth-child(2) {
@@ -642,7 +676,7 @@ li a, li i {
 .menu__description .meal .plate .plate-proposal:nth-child(4) {
   animation-delay: 0.9s;
 }
-.menu__description .meal .plate .plate-proposal:last-child {
+.menu__description .meal .plate .plate-proposal:nth-child(5) {
   animation-delay: 1.1s;
 }
 

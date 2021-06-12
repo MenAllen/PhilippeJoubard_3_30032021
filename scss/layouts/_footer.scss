@@ -1,14 +1,14 @@
 .footer {
     background-color: rgba(0, 0, 0, 80%);
-    @include flex-setup (normal, column, flex-start, left);
+    @include flex-setup(normal, column, flex-start, start);
     padding: 2rem;
     color: $color-text-footer;
     ul {
-        @include flex-setup (normal, row, space-between, center, wrap);
-        @include size (80%);
+        @include flex-setup(normal, row, space-between, center, wrap);
+        @include size(80%);
         padding-top: 1rem;
         @media (max-width: 768px) {
-            @include flex-setup (normal, column, center, start);
+            @include flex-setup(normal, column, center, start);
         }
         li {
             list-style-type: none;

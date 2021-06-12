@@ -1,54 +1,51 @@
 .presentation {
-  background-color: $background-color-presentation;
-  @include size(100%);
-  &__location {
-    @include flex-setup;
-    background-color: $background-color-location;
-    box-shadow: inset 0px 10px 20px -15px rgba(0,0,0, 55%); 
-  }
-  &__search {
-    @include flex-setup(normal, column);
-    padding: 2rem;
-    .button {
-      @extend %btn-nav;
+    background-color: $background-color-presentation;
+    /*  @include size(100%);*/
+    &__location {
+        @include flex-setup;
+        background-color: $background-color-location;
+        box-shadow: $shadow-presentation-location;
     }
-  }
-  &__howto {
-    @include flex-setup(normal, column, center, left);
-    background-color: $background-color-howto;
-    padding: 2rem 0;
-    .three-steps {
-      @include flex-setup(normal, row, space-around, center, wrap);
-      margin: 0.5rem 0;
-      .step-card {
-        @include flex-setup(normal, row, flex-start, center);
-        @include size(330px, 70px);
-        @include minsize(330px);
-        background-color: $background-color-3steps;
-        cursor: pointer;
-        position: relative;
-        margin: 1rem;
-        border-radius: $border-radius-card;
-        box-shadow: $shadow-step-card;
-        .number {
-          @include flex-setup(normal, row, center, center);
-          @include size(2rem, 2rem);
-          background-color: $color-primary;
-          color: $color-step-card-123;
-          border-radius: $border-radius-number-circle;
-          position: absolute;
-          top: 1.3rem;
-          right: 0px;
-          bottom: 0px;
-          left: -10px;
+    &__search {
+        @include flex-setup(normal, column);
+        padding: 2rem;
+        .button {
+            @extend %btn-nav;
         }
-        i {
-          margin-left: 2rem;
-        }
-        &:hover {
-          @extend %hover-effect; 
-        }
-      }
     }
-  }
+    &__howto {
+        @include flex-setup(normal, column, center, center);
+        background-color: $background-color-howto;
+        padding: 2rem 0;
+        .three-steps {
+            @include flex-setup(normal, row, space-around, center, wrap);
+            @include size(100%);
+            margin: 0.5rem 0;
+            .step-card {
+                @include flex-setup(normal, row, flex-start, center);
+                @include size(330px, 70px);
+                @include minsize(330px);
+                background-color: $background-color-3steps;
+                cursor: pointer;
+                position: relative;
+                margin: 1rem;
+                border-radius: $border-radius-card;
+                box-shadow: $shadow-step-card;
+                .number {
+                    @include flex-setup(normal, row, center, center);
+                    @include size(2rem, 2rem);
+                    @include position(absolute, $top: 1.3rem, $left: -10px);
+                    background-color: $color-primary;
+                    color: $color-step-card-123;
+                    border-radius: $border-radius-number-circle;
+                }
+                i {
+                    margin-left: 2rem;
+                }
+                &:hover {
+                    @extend %hover-effect;
+                }
+            }
+        }
+    }
 }

@@ -1,24 +1,24 @@
 /* Position formats */
 
-%center-text-location {
+%center_text_location {
     text-align: center;
     padding: 1rem;
     line-height: 1;
 }
 
-%center-text-title {
+%center_text_title {
     text-align: center;
     padding: 0.5rem 1rem;
     line-height: 1.2;
 }
 
-%center-text-para {
+%center_text_para {
     text-align: center;
     padding: 0.5rem 0;
     line-height: 1.2;
 }
 
-%center-text-howto {
+%center_text_howto {
     text-align: center;
     padding: 1rem;
     line-height: 1;
@@ -26,60 +26,66 @@
 
 /* Button format */
 
-%btn-nav {
-    @include size(185px, 20px);
-    margin: 1.5rem 0;
-    padding: 15px;
+%btn_nav {
+    @include size(11.5rem, 1.25rem);
+    margin: 1.5rem 0 2.5rem 0;
+    padding: 1rem;
     text-align: center;
-    color: $color-text-btn-nav;
+    color: $color_text_btn_nav;
     font-size: 16px;
     font-weight: 400;
-    background: linear-gradient($color-secondary, $color-primary);
+    background: linear-gradient($color_secondary, $color_primary);
     border: none;
-    border-radius: $border-radius-btn-nav;
+    border-radius: $border_radius_btn_nav;
     &:hover {
-        box-shadow: $shadow-btn-on-hover;
+        box-shadow: $shadow_btn_on_hover;
+        background: linear-gradient(
+            $color_secondary_lighter,
+            $color_primary_lighter
+        );
         opacity: 1;
         cursor: pointer;
-        transition: 0.4s;
+        transition: 0.2s;
     }
 }
 
-/* label format stck on some restaurant image */
+/* label format stuck on some restaurant image */
 
-%label-nouveau {
+%label_nouveau {
     @include size(4.3rem, 0.8rem);
-    background-color: $color-tertiary;
-    color: darken($color-tertiary, $amount: 40);
+    background-color: $color_tertiary;
+    color: darken($color_tertiary, $amount: 40);
     font-size: 14px;
     font-weight: bold;
     padding: 0.5rem 0.8rem 0.5rem 0.5rem;
     text-align: center;
-    border-radius: $border-radius-label-nouveau;
+    border-radius: $border_radius_label_nouveau;
     position: absolute;
     top: 18px;
     right: 10px;
     bottom: 0px;
 }
 
-%hover-effect {
-    box-shadow: $shadow-none;
-    background-color: $background-color-hover;
+/* hover effects on button */
+
+%hover_effect {
+    box-shadow: $shadow_btn_on_hover;
+    background-color: $background_color_hover;
     transition: 0.4s;
 }
 
 /* Back arrow format on header page */
 
-%header-backarrow {
+%header_backarrow {
     @include position(absolute, $top: 25px, $left: 20px);
     font-size: 20px;
     text-decoration: none;
-    color: $color-backarrow-header;
+    color: $color_backarrow_header;
 }
 
 /* miscellaneous formats on Menu pages */
 
-%menu-plate-title {
+%menu_plate_title {
     margin: 1.5rem 0 0.5rem 0;
     padding-left: 1rem;
     align-self: start;
@@ -87,12 +93,12 @@
         content: "";
         @include size(2.5rem, 0.2rem);
         margin-top: 0.4rem;
-        background: $color-tertiary;
+        background: $color_tertiary;
         display: block;
     }
 }
 
-%menu-description {
+%menu_description {
     margin: 0.5rem;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -100,18 +106,37 @@
     overflow: hidden;
 }
 
-%menu-price {
+%menu_price {
     line-height: 6.25rem;
-    padding: 0 0.75rem 0 0;
+    padding: 0 1.5rem 0 0;
     margin-left: auto;
     align-self: start;
     font-weight: bold;
 }
 
-%menu-select {
-    background-color: $background-color-select-icon;
-    color: $color-tertiary;
-    border-radius: $border-radius-card;
+%menu_select {
+    background-color: $background_color_select_icon;
+    color: $color_tertiary;
+    border-radius: $border_radius_card;
     font-size: 1.5em;
     transform: rotate(180deg);
+}
+
+/* heart attributes */ 
+
+%fa_heart {
+    font-size: 1.8em;
+    color: $color-heart-icon;
+    -webkit-text-stroke: 2px black;
+    opacity: 0.6;
+    margin-right: 1rem;
+}
+
+%fa_heart_hover {
+    background: linear-gradient(to right, #ff79da, #9356dc);
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 0px;
+    opacity: 1;
+    transition: all 0.8s ease-in-out;
+    cursor: pointer;
 }

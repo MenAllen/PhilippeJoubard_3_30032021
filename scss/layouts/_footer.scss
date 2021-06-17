@@ -1,23 +1,25 @@
+/* Footer for every page */
+
 .footer {
     background-color: rgba(0, 0, 0, 80%);
-    @include flex-setup(normal, column, flex-start, start);
-    padding: 2rem;
-    color: $color-text-footer;
+    @include flex_setup(column, flex-start, start);
+    padding: 2rem 1.5rem;
+    color: $color_text_footer;
     ul {
-        @include flex-setup(normal, row, space-between, center, wrap);
-        @include size(80%);
+        @include flex_setup(row, space-between, center, wrap);
+        @include size(88%);
         padding-top: 1rem;
-        @media (max-width: 768px) {
-            @include flex-setup(normal, column, center, start);
+        @media screen and (max-width: $breakpoint_mobile) {
+            @include flex_setup(column, center, start);
         }
         li {
             list-style-type: none;
             margin: 0.5rem;
             i {
-                padding-right: 1rem;
+                padding-right: 0.5rem;
             }
             a {
-                color: $color-text-footer;
+                color: $color_text_footer;
             }
         }
     }

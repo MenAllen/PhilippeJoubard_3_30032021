@@ -16,8 +16,8 @@
     }
 }
 
-/* Menu Checkbox animation: rotate icon on hover */
-@keyframes checkbox-rotate {
+/* Menu checkbox animation: rotate icon on hover */
+@keyframes checkbox_rotate {
     0% {
         transform: rotate(180deg);
     }
@@ -26,8 +26,8 @@
     }
 }
 
-/* Menu Display Animation: display hiding */
-@keyframes delayed-display {
+/* Menu display animation: display hiding */
+@keyframes delayed_display {
     0% {
         opacity: 0;
         -webkit-transform: translateY(100%);

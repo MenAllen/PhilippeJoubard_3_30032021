@@ -1,9 +1,11 @@
+/* height & width settings */
+
 @mixin size($width, $height: auto) {
     width: $width;
     height: $height;
 }
 
-@mixin minsize($width, $height: auto) {
+@mixin minsize($width, $height: 0) {
     min-width: $width;
     min-height: $height;
 }
@@ -13,6 +15,8 @@
     max-height: $height;
 }
 
+/* relative and absolute positioning */
+
 @mixin position($type, $top: 0px, $right: 0px, $bottom: 0px, $left: 0px) {
     position: $type;
     top: $top;
@@ -21,8 +25,9 @@
     left: $left;
 }
 
-@mixin flex-setup(
-    $gap: normal,
+/* display flex settings */
+
+@mixin flex_setup(
     $direction: row,
     $justify: center,
     $align: center,
@@ -33,23 +38,31 @@
     justify-content: $justify;
     align-items: $align;
     flex-wrap: $wrap;
-    column-gap: $gap;
 }
 
-@mixin center-text($padding-side: 0, $line-height: 1.2) {
+@mixin flex_gap($column: normal, $row: normal) {
+    column-gap: $column;
+    row-gap: $row;
+}
+
+/* text positioning */
+
+@mixin center_text($padding_side: 0, $line_height: 1.2) {
     text-align: center;
     padding: 1rem;
-    line-height: $line-height;
+    line-height: $line_height;
     @if $padding-side != 0 {
-        padding-right: $padding-side;
-        padding-left: $padding-side;
+        padding-right: $padding_side;
+        padding-left: $padding_side;
     }
 }
 
-@mixin loader-bloc($color, $size: auto) {
+/* loader animation setting */
+
+@mixin loader_bloc($color, $size: auto) {
     content: "";
     position: absolute;
-    border-radius: $border-radius-loader-circle;
+    border-radius: $border_radius_circle;
     border: 5px solid transparent;
     border-top-color: $color;
     top: $size;

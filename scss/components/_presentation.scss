@@ -1,49 +1,56 @@
+/* Ohmyfood presentation on home page with location, search and howto information */
+
 .presentation {
-    background-color: $background-color-presentation;
-    /*  @include size(100%);*/
+    background-color: $background_color_presentation;
     &__location {
-        @include flex-setup;
-        background-color: $background-color-location;
-        box-shadow: $shadow-presentation-location;
+        @include flex_setup();
+        background-color: $background_color_location;
+        box-shadow: $shadow_presentation_location;
     }
     &__search {
-        @include flex-setup(normal, column);
-        padding: 2rem;
+        @include flex_setup(column);
+        padding: 1rem;
         .button {
-            @extend %btn-nav;
+            @extend %btn_nav;
         }
     }
     &__howto {
-        @include flex-setup(normal, column, center, center);
-        background-color: $background-color-howto;
+        @include flex_setup(column, center, center);
+        background-color: $background_color_howto;
         padding: 2rem 0;
-        .three-steps {
-            @include flex-setup(normal, row, space-around, center, wrap);
-            @include size(100%);
+        .three_steps {
+            @include flex_setup(row, space-around, center, wrap);
+            @include size(100vw, auto);
             margin: 0.5rem 0;
-            .step-card {
-                @include flex-setup(normal, row, flex-start, center);
-                @include size(330px, 70px);
-                @include minsize(330px);
-                background-color: $background-color-3steps;
+            @media screen and (max-width: $breakpoint_mobile) {
+                flex-direction: column;
+            }
+            .step_card {
+                @include flex_setup(row, flex-start, center);
+                @include maxsize(25rem);
+                @include minsize(15.75rem, 4.4rem);
+                @media screen and (max-width: $breakpoint_mobile) {
+                    @include size(90vw);
+                }
+                background-color: $background_color_3steps;
                 cursor: pointer;
                 position: relative;
-                margin: 1rem;
-                border-radius: $border-radius-card;
-                box-shadow: $shadow-step-card;
+                margin: 1rem 0;
+                border-radius: $border_radius_card;
+                box-shadow: $shadow_step_card;
                 .number {
-                    @include flex-setup(normal, row, center, center);
+                    @include flex_setup(row, center, center);
                     @include size(2rem, 2rem);
-                    @include position(absolute, $top: 1.3rem, $left: -10px);
-                    background-color: $color-primary;
-                    color: $color-step-card-123;
-                    border-radius: $border-radius-number-circle;
+                    @include position(absolute, $top: 20px, $left: -10px);
+                    background-color: $color_primary;
+                    color: $color_step_card_123;
+                    border-radius: $border_radius_circle;
                 }
                 i {
                     margin-left: 2rem;
                 }
                 &:hover {
-                    @extend %hover-effect;
+                    @extend %hover_effect;
                 }
             }
         }

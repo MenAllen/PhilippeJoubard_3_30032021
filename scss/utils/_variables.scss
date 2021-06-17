@@ -1,50 +1,49 @@
 /* Themes colors */
-$color-primary: #9356dc;
-$color-secondary: #ff79da;
-$color-tertiary: #99e2d0;
-$color-quaterly: #e99414;
+$color_primary: #9356dc;
+$color_secondary: #ff79da;
+$color_tertiary: #99e2d0;
+$color_quaterly: #e99414;
+$color_primary_lighter: rgba(147, 86, 220, 0.8);
+$color_secondary_lighter: rgba(255, 121, 218, 0.8);
 
 /*  Colors used for background */
-$background-color-restaurants: #fafafa;
-$background-color-3steps: #fafafa;
-$background-color-presentation: #fafafa;
-$background-color-location: #f2f2f2;
-$background-color-menu-description: #fafafa;
-$background-color-plate-proposal: #fff;
-$background-color-select-icon: #fff;
-$background-color-loader: hsla(0, 0%, 100%, 0.7);
-$background-color-howto: #fff;
-$background-color-hover: #f2f2f2;
+$background_color_restaurants: #fafafa;
+$background_color_3steps: #fafafa;
+$background_color_presentation: #fafafa;
+$background_color_location: #f2f2f2;
+$background_color_menu_description: #fafafa;
+$background_color_plate_proposal: #fff;
+$background_color_select_icon: #fff;
+$background_color_loader: hsla(0, 0%, 100%, 0.7);
+$background_color_howto: #fff;
+$background_color_hover: #fff;
 
 /* Miscellaneous colors */
-$color-step-card-123: #fff;
-$color-heart-icon: transparent;
-$color-reset-after-visited: #000;
-$color-text-footer: #fff;
-$color-backarrow-header: #000;
-$color-text-btn-nav: #fff;
+$color_step_card_123: #fff;
+$color_heart_icon: transparent;
+$color_reset_after_visited: #000;
+$color_text_footer: #fff;
+$color_backarrow_header: #000;
+$color_text_btn_nav: #fff;
 
 /* shadows used for buttons and cards */
-$shadow-step-card: 10px 10px 10px 0px rgb(0, 0, 0, 15%);
-$shadow-restaurant-card: 10px 10px 10px 0px rgb(0, 0, 0, 15%);
-$shadow-btn-on-hover: 0px 0px 10px 5px rgb(0, 0, 0, 25%);
-$shadow-plate-proposal: 2px 2px 14px #aaaaaa;
-$shadow-none: unset;
-$shadow-presentation-location: inset 0px 10px 20px -15px rgba(0, 0, 0, 55%);
+$shadow_step_card: 10px 10px 10px 0px rgb(0, 0, 0, 15%);
+$shadow_restaurant_card: 10px 10px 10px 0px rgb(0, 0, 0, 15%);
+$shadow_btn_on_hover: 9px 9px 10px 0px rgb(0, 0, 0, 30%);
+$shadow_plate_proposal: 2px 2px 14px #aaaaaa;
+$shadow_presentation_location: inset 0px 10px 20px -15px rgba(0, 0, 0, 55%);
 
 /* Border radius */
-$border-radius-loader-circle: 50%;
-$border-radius-number-circle: 50%;
-$border-radius-card: 23px;
-$border-radius-label-nouveau: 2px;
-$border-radius-btn-nav: 100px;
-$border-radius-menu-title: 3rem 3rem 0 0;
+$border_radius_circle: 50%;
+$border_radius_card: 23px;
+$border_radius_label_nouveau: 2px;
+$border_radius_btn_nav: 100px;
+$border_radius_menu_title: 3rem 3rem 0 0;
 
 /* z-index values */
 $top: 100;
 $below: -100;
 
-/* Media Query */
-$medium: 768px;
-$medium-up: "only screen and (min-width: #{768px})";
-$padding: 20px;
+/* Breakpoints for Media Query */
+$breakpoint_mobile_menu: 818px;
+$breakpoint_mobile: 768px;

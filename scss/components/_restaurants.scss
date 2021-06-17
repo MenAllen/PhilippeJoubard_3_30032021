@@ -1,41 +1,42 @@
+/* Restaurants displayed on home page */
+
 .restaurants {
     margin-top: 1rem;
     padding: 3rem 0;
-    background-color: $background-color-restaurants;
+    background-color: $background_color_restaurants;
     &__list {
-        @include flex-setup(normal, row, space-around, center, wrap);
-        @media (max-width: 768px) {
-            flex-direction: column;
-        }
-        @media (min-width: 1020px) {
-            @include flex-setup(normal, row, space-around, center, wrap);
-        }
+        @include flex_setup(row, space-around, center, wrap);
         .affiche {
-            box-shadow: $shadow-restaurant-card;
-            border-radius: $border-radius-card;
-            @include flex-setup(normal, column, space-around, center);
+            box-shadow: $shadow_restaurant_card;
+            border-radius: $border_radius_card;
+            @include flex_setup(column, space-around, center);
+            @include size(90vw, auto);
+            @media screen and (min-width: $breakpoint_mobile) {
+                @include size(35vw, auto);
+            }
+
             margin: 1rem 0;
             position: relative;
+
             .image {
-                @include size(35vw, auto);
-                @include minsize(335px, 175px);
+                width: 100%;
                 object-fit: cover;
                 border-top-left-radius: 15px;
                 border-top-right-radius: 15px;
             }
             .legend {
-                @include flex-setup(normal, row, space-between, center);
+                @include flex_setup(row, space-between, center);
                 padding: 0.5rem 0;
                 .description {
-                    @include flex-setup(normal, column, start, center);
+                    @include flex_setup(column, start, center);
                     @include size(100%);
                 }
             }
-            .label-nouveau {
-                @extend %label-nouveau;
+            .label_nouveau {
+                @extend %label_nouveau;
             }
             &:hover {
-                @extend %hover-effect;
+                @extend %hover_effect;
             }
         }
     }

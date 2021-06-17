@@ -1,10 +1,12 @@
+/* Header with logo on home page */
 .header {
-    @include flex-setup();
+    @include flex_setup();
     position: relative;
     padding: 1rem;
     margin-bottom: 0.3rem;
 }
 
+/* Backarrow for header on menu pages */
 .back-arrow {
-    @extend %header-backarrow;
+    @extend %header_backarrow;
 }

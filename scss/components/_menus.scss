@@ -20,7 +20,7 @@
 
         .title {
             @include flex_setup(row, space-between, center);
-            @include size(100%);
+            @include size(96%);
             background-color: $background_color_menu_description;
             padding: 2rem;
             margin-top: -3.5rem;
@@ -57,7 +57,6 @@
                     margin: 0.75rem 0.5rem;
                     overflow: hidden;
                     box-shadow: $shadow_plate_proposal;
-                    animation: delayed_display 1s both;
                     &:hover {
                         cursor: pointer;
                     }
@@ -84,14 +83,8 @@
                         animation: checkbox_rotate 0.5s both;
                     }
                     &:hover .selectbox {
-                        @include minsize(4rem);
                         margin-right: 0;
                         transition: margin-right 0.5s;
-                    }
-                    @for $i from 2 through 5 {
-                        &:nth-child(#{$i}) {
-                            animation-delay: $i * 0.2s;
-                        }
                     }
                 }
             }

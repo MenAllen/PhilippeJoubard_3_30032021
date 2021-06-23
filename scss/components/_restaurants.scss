@@ -4,8 +4,10 @@
     margin-top: 1rem;
     padding: 3rem 0;
     background-color: $background_color_restaurants;
+
     &__list {
         @include flex_setup(row, space-around, center, wrap);
+
         .affiche {
             box-shadow: $shadow_restaurant_card;
             border-radius: $border_radius_card;
@@ -24,6 +26,7 @@
                 border-top-left-radius: 15px;
                 border-top-right-radius: 15px;
             }
+
             .legend {
                 @include flex_setup(row, space-between, center);
                 padding: 0.5rem 0;
@@ -32,9 +35,11 @@
                     @include size(100%);
                 }
             }
+
             .label_nouveau {
                 @extend %label_nouveau;
             }
+
             &:hover {
                 @extend %hover_effect;
             }

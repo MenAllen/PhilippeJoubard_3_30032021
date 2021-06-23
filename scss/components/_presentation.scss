@@ -2,11 +2,13 @@
 
 .presentation {
     background-color: $background_color_presentation;
+
     &__location {
         @include flex_setup();
         background-color: $background_color_location;
         box-shadow: $shadow_presentation_location;
     }
+
     &__search {
         @include flex_setup(column);
         padding: 1rem;
@@ -14,45 +16,52 @@
             @extend %btn_nav;
         }
     }
+
     &__howto {
         @include flex_setup(column, center, center);
         background-color: $background_color_howto;
         padding: 2rem 0;
-        .three_steps {
-            @include flex_setup(row, space-around, center, wrap);
-            @include size(100vw, auto);
-            margin: 0.5rem 0;
-            @media screen and (max-width: $breakpoint_mobile) {
-                flex-direction: column;
-            }
-            .step_card {
-                @include flex_setup(row, flex-start, center);
-                @include maxsize(25rem);
-                @include minsize(15.75rem, 4.4rem);
-                @media screen and (max-width: $breakpoint_mobile) {
-                    @include size(90vw);
-                }
-                background-color: $background_color_3steps;
-                cursor: pointer;
-                position: relative;
-                margin: 1rem 0;
-                border-radius: $border_radius_card;
-                box-shadow: $shadow_step_card;
-                .number {
-                    @include flex_setup(row, center, center);
-                    @include size(2rem, 2rem);
-                    @include position(absolute, $top: 20px, $left: -10px);
-                    background-color: $color_primary;
-                    color: $color_step_card_123;
-                    border-radius: $border_radius_circle;
-                }
-                i {
-                    margin-left: 2rem;
-                }
-                &:hover {
-                    @extend %hover_effect;
-                }
-            }
+    }
+}
+
+/* detailes Howto information : three steps site use description */
+.three_steps {
+    @include flex-setup(column, center, center, wrap);
+    @include size(100vw, auto);
+    @media screen and (min-width: $breakpoint_mobile) {
+        @include flex-setup(row, space-around, center, wrap);
+    }
+    margin: 0.5rem 0;
+
+    .step_card {
+        @include flex_setup(row, flex-start, center);
+        @include size(90vw);
+        @include maxsize(25rem);
+        @include minsize(15.75rem, 4.4rem);
+
+        background-color: $background_color_3steps;
+        box-shadow: $shadow_step_card;
+        border-radius: $border_radius_card;
+        cursor: pointer;
+        position: relative;
+        margin: 1rem 0.5rem;
+
+        .number {
+            @include flex_setup(row, center, center);
+            @include size(2rem, 2rem);
+            @include position(absolute, $top: 20px, $left: -10px);
+
+            background-color: $color_primary;
+            border-radius: $border_radius_circle;
+            color: $color_step_card_123;
+        }
+
+        i {
+            margin-left: 2rem;
+        }
+
+        &:hover {
+            @extend %hover_effect;
         }
     }
 }

@@ -6,11 +6,11 @@
     padding: 2rem 1.5rem;
     color: $color_text_footer;
     ul {
-        @include flex_setup(row, space-between, center, wrap);
+        @include flex-setup(column, center, start, wrap);
         @include size(88%);
         padding-top: 1rem;
-        @media screen and (max-width: $breakpoint_mobile) {
-            @include flex_setup(column, center, start);
+        @media screen and (min-width: $breakpoint-mobile) {
+            @include flex-setup(row, space-between, center, wrap);
         }
         li {
             list-style-type: none;

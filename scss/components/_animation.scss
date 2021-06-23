@@ -1,8 +1,10 @@
-/* loader display during 3s on home page access */
+/* Loader Animation */
 
+/* Animation load top stop spin after 3s */
 .container_loader {
     @include flex_setup(row, center, center);
     @include size(100%, 100%);
+
     background-color: $background_color_loader;
     color: transparent;
     position: fixed;
@@ -10,16 +12,20 @@
     animation: load 0.01s 3s both;
 }
 
+/* Animation spin during 3s on home page access */
 .loader {
     @include loader_bloc($color_primary);
     @include size(9.5rem, 9.5rem);
+
     vertical-align: middle;
     border-bottom-color: $color_tertiary;
     animation: spin 1s linear 3;
+
     &::after {
         @include loader_bloc($color_secondary, 10px);
         animation: spin 2s linear 3;
     }
+
     &::before {
         @include loader_bloc($color_quaterly, 25px);
         animation: spin 3s linear 3;

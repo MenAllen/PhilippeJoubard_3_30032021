@@ -168,7 +168,7 @@ a:link {
 }
 
 /* hover effects on button */
-.restaurants__list .affiche:hover, .presentation__howto .three_steps .step_card:hover {
+.restaurants__list .affiche:hover, .three_steps .step_card:hover {
   box-shadow: 9px 9px 10px 0px rgba(0, 0, 0, 0.3);
   background-color: #fff;
   transition: 0.4s;
@@ -187,12 +187,12 @@ a:link {
 }
 
 /* miscellaneous formats on Menu pages */
-.menu__description .meal .plate h4 {
+.meal .plate h4 {
   margin: 1.5rem 0 0.5rem 0;
   padding-left: 1rem;
   align-self: start;
 }
-.menu__description .meal .plate h4::after {
+.meal .plate h4::after {
   content: "";
   width: 2.5rem;
   height: 0.2rem;
@@ -201,8 +201,8 @@ a:link {
   display: block;
 }
 
-.menu__description .meal .plate .plate_proposal .description h3,
-.menu__description .meal .plate .plate_proposal .description h5 {
+.meal .plate .plate_proposal .description h3,
+.meal .plate .plate_proposal .description h5 {
   margin: 0.5rem;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -210,7 +210,7 @@ a:link {
   overflow: hidden;
 }
 
-.menu__description .meal .plate .plate_proposal .price {
+.meal .plate .plate_proposal .price {
   line-height: 6.25rem;
   padding: 0 1.5rem 0 0;
   margin-left: auto;
@@ -218,7 +218,7 @@ a:link {
   font-weight: bold;
 }
 
-.menu__description .meal .plate .plate_proposal .selectbox i {
+.meal .plate .plate_proposal .selectbox i {
   background-color: #fff;
   color: #99e2d0;
   border-radius: 23px;
@@ -226,7 +226,7 @@ a:link {
   transform: rotate(180deg);
 }
 
-/* heart attributes */
+/* Heart attributes */
 .fa-heart {
   font-size: 1.8em;
   color: transparent;
@@ -308,21 +308,21 @@ a:link {
 }
 .footer ul {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
   flex-wrap: wrap;
   width: 88%;
   height: auto;
   padding-top: 1rem;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .footer ul {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
   }
 }
 .footer ul li {
@@ -366,45 +366,47 @@ a:link {
   background-color: #fff;
   padding: 2rem 0;
 }
-.presentation__howto .three_steps {
+
+/* detailes Howto information : three steps site use description */
+.three_steps {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: 100vw;
   height: auto;
   margin: 0.5rem 0;
 }
-@media screen and (max-width: 768px) {
-  .presentation__howto .three_steps {
-    flex-direction: column;
+@media screen and (min-width: 768px) {
+  .three_steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
   }
 }
-.presentation__howto .three_steps .step_card {
+.three_steps .step_card {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
+  width: 90vw;
+  height: auto;
   max-width: 25rem;
   max-height: 100%;
   min-width: 15.75rem;
   min-height: 4.4rem;
   background-color: #fafafa;
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 23px;
   cursor: pointer;
   position: relative;
-  margin: 1rem 0;
-  border-radius: 23px;
-  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.15);
+  margin: 1rem 0.5rem;
 }
-@media screen and (max-width: 768px) {
-  .presentation__howto .three_steps .step_card {
-    width: 90vw;
-    height: auto;
-  }
-}
-.presentation__howto .three_steps .step_card .number {
+.three_steps .step_card .number {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -418,10 +420,10 @@ a:link {
   bottom: 0px;
   left: -10px;
   background-color: #9356dc;
-  color: #fff;
   border-radius: 50%;
+  color: #fff;
 }
-.presentation__howto .three_steps .step_card i {
+.three_steps .step_card i {
   margin-left: 2rem;
 }
 /* Restaurants displayed on home page */
@@ -479,7 +481,7 @@ a:link {
   width: 100%;
   height: auto;
 }
-/* Menu page for each restaurant with detailed menu and animations */
+/* Menu page for each restaurant including Meal description with detailed menu and animations */
 .menu {
   display: flex;
   flex-direction: column;
@@ -519,20 +521,20 @@ a:link {
   width: 96%;
   height: auto;
   background-color: #fafafa;
+  border-radius: 3rem 3rem 0 0;
   padding: 2rem;
   margin-top: -3.5rem;
-  border-radius: 3rem 3rem 0 0;
   position: relative;
   z-index: 1;
 }
-.menu__description .meal {
+.meal {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: start;
   flex-wrap: wrap;
 }
-.menu__description .meal .plate {
+.meal .plate {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -540,12 +542,12 @@ a:link {
   flex-wrap: nowrap;
 }
 @media screen and (min-width: 818px) {
-  .menu__description .meal .plate {
+  .meal .plate {
     column-gap: normal;
     row-gap: 2vh;
   }
 }
-.menu__description .meal .plate h4::after {
+.meal .plate h4::after {
   content: "";
   width: 2.5rem;
   height: 0.2rem;
@@ -553,7 +555,7 @@ a:link {
   background: #99e2d0;
   display: block;
 }
-.menu__description .meal .plate .plate_proposal {
+.meal .plate .plate_proposal {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -564,19 +566,16 @@ a:link {
   max-width: 22rem;
   max-height: 100%;
   background-color: #fff;
-  padding: 0;
   border-radius: 23px;
+  box-shadow: 2px 2px 14px #aaaaaa;
+  padding: 0;
   margin: 0.75rem 0.5rem;
   overflow: hidden;
-  box-shadow: 2px 2px 14px #aaaaaa;
 }
-.menu__description .meal .plate .plate_proposal:hover {
-  cursor: pointer;
-}
-.menu__description .meal .plate .plate_proposal .description {
+.meal .plate .plate_proposal .description {
   overflow: hidden;
 }
-.menu__description .meal .plate .plate_proposal .selectbox {
+.meal .plate .plate_proposal .selectbox {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -587,14 +586,19 @@ a:link {
   background-color: #99e2d0;
   margin-right: -4rem;
 }
-.menu__description .meal .plate .plate_proposal:hover .selectbox i {
-  animation: checkbox_rotate 0.5s both;
+.meal .plate .plate_proposal:hover {
+  cursor: pointer;
 }
-.menu__description .meal .plate .plate_proposal:hover .selectbox {
+.meal .plate .plate_proposal:hover .selectbox {
   margin-right: 0;
   transition: margin-right 0.5s;
 }
-/* loader display during 3s on home page access */
+.meal .plate .plate_proposal:hover .selectbox i {
+  animation: checkbox_rotate 0.5s both;
+}
+
+/* Loader Animation */
+/* Animation load top stop spin after 3s */
 .container_loader {
   display: flex;
   flex-direction: row;
@@ -610,6 +614,7 @@ a:link {
   animation: load 0.01s 3s both;
 }
 
+/* Animation spin during 3s on home page access */
 .loader {
   content: "";
   position: absolute;

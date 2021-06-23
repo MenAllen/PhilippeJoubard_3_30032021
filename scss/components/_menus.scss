@@ -1,10 +1,11 @@
-/* Menu page for each restaurant with detailed menu and animations */
+/* Menu page for each restaurant including Meal description with detailed menu and animations */
 
 .menu {
     @include flex_setup(column, center, center);
 
     &__picture {
         @include size(100%);
+
         img {
             @include size(100%);
             @include maxsize(100%, 26rem);
@@ -22,76 +23,85 @@
             @include flex_setup(row, space-between, center);
             @include size(96%);
             background-color: $background_color_menu_description;
+            border-radius: $border_radius_menu_title;
             padding: 2rem;
             margin-top: -3.5rem;
-            border-radius: $border_radius_menu_title;
             position: relative;
             z-index: 1;
         }
 
-        .meal {
-            @include flex_setup(row, space-around, start, wrap);
+        .button {
+            @extend %btn_nav;
+        }
+    }
+}
 
-            .plate {
-                @include flex_setup(column, center, center);
-                @media screen and (min-width: $breakpoint_mobile_menu) {
-                    @include flex_gap(normal, 2vh);
-                }
-                h4 {
-                    @extend %menu_plate_title;
-                    &::after {
-                        content: "";
-                        @include size(2.5rem, 0.2rem);
-                        margin-top: 0.4rem;
-                        background: $color_tertiary;
-                        display: block;
-                    }
-                }
-                .plate_proposal {
-                    @include flex_setup(row, space-between, center);
-                    @include size(95vw, 4.4rem);
-                    @include maxsize(22rem);
-                    background-color: $background_color_plate_proposal;
-                    padding: 0;
-                    border-radius: $border_radius_card;
-                    margin: 0.75rem 0.5rem;
-                    overflow: hidden;
-                    box-shadow: $shadow_plate_proposal;
-                    &:hover {
-                        cursor: pointer;
-                    }
-                    .description {
-                        overflow: hidden;
-                        h3,
-                        h5 {
-                            @extend %menu_description;
-                        }
-                    }
-                    .price {
-                        @extend %menu_price;
-                    }
-                    .selectbox {
-                        @include flex_setup(row, center, center);
-                        @include size(3.75rem, 100%);
-                        background-color: $color_tertiary;
-                        margin-right: -4rem;
-                        i {
-                            @extend %menu_select;
-                        }
-                    }
-                    &:hover .selectbox i {
-                        animation: checkbox_rotate 0.5s both;
-                    }
-                    &:hover .selectbox {
-                        margin-right: 0;
-                        transition: margin-right 0.5s;
-                    }
-                }
+.meal {
+    @include flex_setup(row, space-around, start, wrap);
+
+    .plate {
+        @include flex_setup(column, center, center);
+        @media screen and (min-width: $breakpoint_mobile_menu) {
+            @include flex_gap(normal, 2vh);
+        }
+
+        h4 {
+            @extend %menu_plate_title;
+            &::after {
+                content: "";
+                @include size(2.5rem, 0.2rem);
+                margin-top: 0.4rem;
+                background: $color_tertiary;
+                display: block;
             }
         }
 
-        .button {
-            @extend %btn_nav;
+        .plate_proposal {
+            @include flex_setup(row, space-between, center);
+            @include size(95vw, 4.4rem);
+            @include maxsize(22rem);
+
+            background-color: $background_color_plate_proposal;
+            border-radius: $border_radius_card;
+            box-shadow: $shadow_plate_proposal;
+            padding: 0;
+            margin: 0.75rem 0.5rem;
+            overflow: hidden;
+
+            .description {
+                overflow: hidden;
+                h3,
+                h5 {
+                    @extend %menu_description;
+                }
+            }
+
+            .price {
+                @extend %menu_price;
+            }
+
+            .selectbox {
+                @include flex_setup(row, center, center);
+                @include size(3.75rem, 100%);
+                background-color: $color_tertiary;
+                margin-right: -4rem;
+                i {
+                    @extend %menu_select;
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:hover .selectbox {
+                margin-right: 0;
+                transition: margin-right 0.5s;
+            }
+
+            &:hover .selectbox i {
+                animation: checkbox_rotate 0.5s both;
+            }
         }
     }
 }

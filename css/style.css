@@ -256,7 +256,6 @@ a:link {
 /* Loader Animation : end after 3s */
 @keyframes load {
   100% {
-    opacity: 0;
     z-index: -100;
   }
 }

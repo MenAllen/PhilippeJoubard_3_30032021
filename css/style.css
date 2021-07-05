@@ -257,6 +257,7 @@ a:link {
 @keyframes load {
   100% {
     z-index: -100;
+    opacity: 0;
   }
 }
 /* Menu checkbox animation: rotate icon on hover */
@@ -279,6 +280,14 @@ a:link {
     opacity: 1;
     -webkit-transform: translateY(0);
     transform: translateY(0);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
   }
 }
 /* Header with logo on home page */
@@ -584,6 +593,7 @@ a:link {
   height: 100%;
   background-color: #99e2d0;
   margin-right: -4rem;
+  transition: margin-right 0.5s;
 }
 .meal .plate .plate_proposal:hover {
   cursor: pointer;

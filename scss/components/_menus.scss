@@ -85,6 +85,7 @@
                 @include size(3.75rem, 100%);
                 background-color: $color_tertiary;
                 margin-right: -4rem;
+                transition: margin-right 0.5s;
                 i {
                     @extend %menu_select;
                 }
